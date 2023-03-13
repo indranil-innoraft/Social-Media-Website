@@ -1,5 +1,5 @@
 <?php
 
-require '../views/errorPage.html';
+require './application/views/errorPage.html';
 
 ?>

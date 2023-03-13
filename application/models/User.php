@@ -7,14 +7,12 @@ class User {
   private string $email;
   private string $bio;
   private string $image;
-  private int $age;
 
-  public function __construct(string $firstName, string $lastName, string $email, string $bio, int $age, string $image) {
+  public function __construct(string $firstName, string $lastName, string $email, string $bio, string $image) {
     $this->firstName = $firstName;
     $this->lastName = $lastName;
     $this->email = $email;
     $this->bio = $bio;
-    $this->age = $age;
     $this->image = $image;
 
     return $this;
@@ -35,10 +33,6 @@ class User {
 
   public function getBiography(): string {
     return $this->bio;
-  }
-
-  public function getAge(): int {
-    return $this->age;
   }
 
   public function image(): string {

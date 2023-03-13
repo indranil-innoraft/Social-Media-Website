@@ -5,16 +5,25 @@ $resquestedUrl = rtrim($resquestedUrl);
 
 switch ($resquestedUrl) {
   case "/":
-    require "./application/controllers/landingPage.php";
+    require "./application/controllers/login.php";
     break;
   case "/login":
-    require "./application/controllers/landingPage.php";
+    require "./application/controllers/login.php";
+    break;
+  case "/signIn":
+    require "./application/controllers/login.php";
     break;
   case "/signUp":
-    require "./application/controllers/signUp.php";
+    require "./application/controllers/register.php";
+    break;
+  case "/register":
+    require "./application/controllers/register.php";
+    break;
+  case "/home":
+    require "./application/controllers/home.php";
     break;
   default:
-    header("Location: ./application/controllers/errorPage.php");
+    require "./application/controllers/errorPage.php";
 }
 
-?>
+?> 
