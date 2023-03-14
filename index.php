@@ -2,6 +2,7 @@
 
 $resquestedUrl = $_SERVER['REQUEST_URI'];
 $resquestedUrl = rtrim($resquestedUrl);
+session_start();
 
 switch ($resquestedUrl) {
   case "/":
@@ -21,6 +22,12 @@ switch ($resquestedUrl) {
     break;
   case "/home":
     require "./application/controllers/home.php";
+    break;
+  case "/profile":
+    require "./application/controllers/profile.php";
+    break;
+  case "/logout":
+    require "./application/controllers/logout.php";
     break;
   default:
     require "./application/controllers/errorPage.php";

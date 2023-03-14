@@ -93,7 +93,7 @@ class Validation
    * 
    */
 
-  function isValidProfilePhoto($fileName, string $type, string $size)
+  function isValidProfilePhoto(string $fileName, string $type, int $size)
   {
     if (!empty($fileName)) {
       if ($type != "image/png"  && $type != "image/jpeg"  && $type != "image/jpg") {

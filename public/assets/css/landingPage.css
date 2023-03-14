@@ -104,7 +104,7 @@
   .formGroup label {
     display: inline-block;
     margin: 0.5em 0;
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 400;
     color: #1f1414;
   }
@@ -141,7 +141,7 @@
   
   .messageHelp {
     margin: 0.5em 0;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: hsl(203, 20%, 41%);
     user-select: none;
   }
@@ -230,4 +230,22 @@ input[type="radio"] + label {
 
 .error {
   color: red;
+  font-size: 1.2rem;
+}
+
+.boldFont{
+  font-size: 1.2rem;
+}
+
+
+.firstName{
+  display:block;
+}
+
+textarea {
+  border: 1px solid #e5e1e1;
+}
+
+ input[type=textarea]:focus {
+  border: 1px solid #e5e1e1;
 }

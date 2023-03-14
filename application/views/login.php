@@ -24,12 +24,20 @@
               </small>
               <label for="password">Password</label>
               <input type="password" id="password" name="password" placeholder="Password" required />
-              <small class="messageHelp">Password incorrect</small>
               <div>
-                <span>Don't have an accout</span>
-                <a href="/register">Register Now</a>
+                <span class="boldFont">Don't have an accout
+                <a href="/register">Register Now</a></span>
               </div>
               <a href="#" id="passwordReset">Forgot password?</a>
+              <div class="error">
+                <?php
+                  if (isset($_SESSION['loginError'])) {
+                    echo $_SESSION['loginError'];
+                    //On reload error should't displayed on the screen.
+                    unset($_SESSION['loginError']);
+                  }
+                ?>
+              </div>
               <button class="btn" name="login" type="submit">Login</button>
             </div>
           </form>
@@ -39,6 +47,7 @@
 
   </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../../public/assets/js/landingPage.js"></script>
 
 </html>

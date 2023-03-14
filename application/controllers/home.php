@@ -1,3 +1,3 @@
 <?php
-require "./application/views/home.html";
+require "./application/views/home.php";
 ?>
