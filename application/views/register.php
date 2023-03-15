@@ -27,10 +27,10 @@
               </span>
               <div class="error">
               <?php
-                if (isset($_SESSION["nameErrorMessage"])) {
-                  echo $_SESSION["nameErrorMessage"];
+                if (isset($GLOBALS["nameErrorMessage"])) {
+                  echo $GLOBALS["nameErrorMessage"];
                   //On reload errors should't display on the screen.
-                  unset($_SESSION["nameErrorMessage"]);
+                  unset($GLOBALS["nameErrorMessage"]);
                 }
                 ?>
               </div>
@@ -50,10 +50,10 @@
               </small>
               <div class="error">
                 <?php 
-                if (isset($_SESSION["emailIdErrorMessage"])) {
-                  echo $_SESSION["emailIdErrorMessage"];
+                if (isset($GLOBALS["emailIdErrorMessage"])) {
+                  echo $GLOBALS["emailIdErrorMessage"];
                   //On reload error should't display on the screen.
-                  unset($_SESSION["emailIdErrorMessage"]);
+                  unset($GLOBALS["emailIdErrorMessage"]);
                 }
                 ?>
               </div>
@@ -65,10 +65,10 @@
               </small>
               <div class="error">
                 <?php 
-                if (isset($_SESSION["profilePhotoErrorMessage"])) {
-                  echo $_SESSION["profilePhotoErrorMessage"];
+                if (isset($GLOBALS["profilePhotoErrorMessage"])) {
+                  echo $GLOBALS["profilePhotoErrorMessage"];
                   //On reload errors should't display on the screen.
-                  unset($_SESSION["profilePhotoErrorMessage"]);
+                  unset($GLOBALS["profilePhotoErrorMessage"]);
                 }
                 ?>
               </div>
@@ -87,10 +87,10 @@
               <small class="messageHelp">Must be at least 6 characters</small>
               <div class="error">
                 <?php 
-                if (isset($_SESSION["passwordErrorMessage"])) {
-                  echo $_SESSION["passwordErrorMessage"];
+                if (isset($GLOBALS["passwordErrorMessage"])) {
+                  echo $GLOBALS["passwordErrorMessage"];
                   //On reload errors should't display on the screen.
-                  unset($_SESSION["passwordErrorMessage"]);
+                  unset($GLOBALS["passwordErrorMessage"]);
                 }
                 ?>
               </div>

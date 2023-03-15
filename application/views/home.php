@@ -115,7 +115,9 @@
         </div>
         <div class="profile">
           <div class="icon_wrap">
-            <img src="<?php echo $_SESSION['user']['profilePhoto'] ?>" alt="profile_pic">
+            <img src="<?php
+            session_start();
+             echo $_SESSION['user']['profilePhoto'] ?>" alt="profile_pic">
             <span class="name">
               <?php
               if (isset ($_SESSION['user']['firstName']) && isset($_SESSION['user']['lastName'])) {

@@ -21,6 +21,7 @@
           </div>
           <div class="grid-65">
             <span class="photo" title="Upload your Avatar!"><img src="<?php
+            session_start();
             if (isset($_SESSION['user']['profilePhoto'])) {
                 echo $_SESSION['user']['profilePhoto'];
             }
@@ -93,8 +94,8 @@
           </div>
         </fieldset>
         <fieldset>
-          <input type="button" class="Btn cancel" value="Go back" />
-          <input type="submit" class="Btn" value="Save Changes" />
+          <input type="button" class="Btn cancel" name="goBack" value="Go back" />
+          <input type="submit" class="Btn" name="update" value="Save Changes" />
         </fieldset>
 
       </form>

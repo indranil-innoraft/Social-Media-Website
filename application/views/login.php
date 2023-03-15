@@ -31,10 +31,10 @@
               <a href="#" id="passwordReset">Forgot password?</a>
               <div class="error">
                 <?php
-                  if (isset($_SESSION['loginError'])) {
-                    echo $_SESSION['loginError'];
+                  if (isset($GLOBALS['loginError'])) {
+                    echo $GLOBALS['loginError'];
                     //On reload error should't displayed on the screen.
-                    unset($_SESSION['loginError']);
+                    unset($GLOBALS['loginError']);
                   }
                 ?>
               </div>
