@@ -1,6 +1,5 @@
 <?php
 
-
 class Database extends mysqli {
     private $connection;
 
@@ -11,7 +10,7 @@ class Database extends mysqli {
      * 
      */
     public function __construct() {
-        $this->connection = new mysqli("localhost", "root", "Indra@6290", "socialMedia");
+      $this->connection = new mysqli("localhost", "root", "Indra@6290", "socialMedia");
     }
 
     /**
@@ -44,14 +43,14 @@ class Database extends mysqli {
      * 
      */
     public function isExists(string $email,string $password) {
-        $sql = "select * from user_information where email = '$email' and password = '$password'";
-        if($this->connection->query($sql)->num_rows != 0) {
-          return True;
-        }
-        else {
-          return False;
-        }
+      $sql = "select * from user_information where email = '$email' and password = '$password'";
+      if($this->connection->query($sql)->num_rows != 0) {
+        return true;
       }
+      else {
+        return false;
+      }
+    }
 
       /**
        * To get the user information from the database.
@@ -65,6 +64,12 @@ class Database extends mysqli {
         $sql = "select * from user_information where email = '$email'";
         return ($this->connection->query($sql)->fetch_all(MYSQLI_ASSOC)[0]);
 
+      }
+
+      public function updateUserInformation(string $firstName, string $lastName, string $gender, string $email, string $profilePhoto, string $bio) {
+        $sql = "update user_information set first_name = first_name, last_name = last_name, gender = gender,
+                profile_photo = profile_photo, bio = bio, password = password where email = 'email';";
+        return ($this->connection->query($sql)->fetch_all(MYSQLI_ASSOC)[0]);
       }
 }
 

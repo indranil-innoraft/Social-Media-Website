@@ -17,8 +17,7 @@
  *   Check user input a correct password or not.
  *  
  */
-class Validation
-{
+class Validation {
 
   /**
    * Store name error related information.
@@ -26,7 +25,7 @@ class Validation
    * @var string
    */
 
-  public string $nameError ;
+  public $nameError ;
 
 
   /**
@@ -35,7 +34,7 @@ class Validation
    * @var string
    */
 
-  public string $uploadedFileError ;
+  public $uploadedFileError ;
 
   /**
    * Store email error related information.
@@ -43,7 +42,7 @@ class Validation
    * @var string
    */
 
-  public string $emailError ;
+  public $emailError ;
 
   /**
    * Store password error related information.
@@ -51,7 +50,7 @@ class Validation
    * @var string
    */
 
-  public string $passwordError ;
+  public $passwordError ;
 
   /**
    * Validate user first and last name.
@@ -66,11 +65,11 @@ class Validation
   public function isValidName(string $firstName, string $lastName) {
     if (empty($firstName) || empty($lastName)) {
       $this->nameError = "Name should not be empty.";
-      return False;
+      return false;
     } 
     else if (preg_match('/[0-9]/', $firstName) || preg_match('/[0-9]/', $lastName)) {
       $this->nameError = "Name should be contain alphabet.";
-      return False;
+      return false;
     } 
     else if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $firstName) || preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $lastName)) {
       $this->nameError = "Name should not contain special character.";
@@ -97,18 +96,18 @@ class Validation
   {
     if (!empty($fileName)) {
       if ($type != "image/png"  && $type != "image/jpeg"  && $type != "image/jpg") {
-        $this->uploadedFileError = "please upload a image(jpeg,png or png).";
-        return False;
+        $this->uploadedFileError = "please upload a image(jpeg, jpg or png).";
+        return false;
       }
       if ($size > 6291456) {
         $this->uploadedFileError = "Please upload a image less then 6MB.";
-        return False;
+        return false;
       }
-      return True;
+      return true;
     }
      else {
-      $this->uploadedFileError = "please upload a image(jpeg,png or png).";
-      return False;
+      $this->uploadedFileError = "please upload a image.";
+      return false;
     }
   }
 
@@ -125,14 +124,14 @@ class Validation
   {
     if (empty($emailAddress)) {
       $this->emailError = "Email field should not be empty.";
-      return False;
+      return false;
     } 
     else if (filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
-      return True;
+      return true;
     } 
     else {
       $this->emailError = "Email id is not valid.";
-      return False;
+      return false;
     }
   }
 

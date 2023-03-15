@@ -7,31 +7,31 @@ class User {
    *
    * @var string
    */
-  private string $firstName;
+  private $firstName;
   /**
    * Store user last name.
    *
    * @var string
    */
-  private string $lastName;
+  private $lastName;
   /**
    * Store user email.
    *
    * @var string
    */
-  private string $email;
+  private $email;
   /**
    * Store user bio.
    *
    * @var string
    */
-  private string $bio;
+  private $bio;
   /**
    * Store user profile image path.
    *
    * @var string
    */
-  private string $image;
+  private $image;
 
   /**
    * To initilize the variable.
