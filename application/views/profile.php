@@ -101,8 +101,6 @@
     </div>
   </div>
 </div>
-
-
-<!-- http://www.smashingmagazine.com/2013/08/08/release-livestyle-css-live-reload/ -->
 </body>
+
 </html>

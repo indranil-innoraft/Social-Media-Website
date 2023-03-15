@@ -29,7 +29,7 @@
               <?php
                 if (isset($_SESSION["nameErrorMessage"])) {
                   echo $_SESSION["nameErrorMessage"];
-                  //On reload errors, should't display on the screen.
+                  //On reload errors should't display on the screen.
                   unset($_SESSION["nameErrorMessage"]);
                 }
                 ?>
@@ -52,7 +52,7 @@
                 <?php 
                 if (isset($_SESSION["emailIdErrorMessage"])) {
                   echo $_SESSION["emailIdErrorMessage"];
-                  //On reload errors, should't display on the screen.
+                  //On reload error should't display on the screen.
                   unset($_SESSION["emailIdErrorMessage"]);
                 }
                 ?>
@@ -67,7 +67,7 @@
                 <?php 
                 if (isset($_SESSION["profilePhotoErrorMessage"])) {
                   echo $_SESSION["profilePhotoErrorMessage"];
-                  //On reload errors, should't display on the screen.
+                  //On reload errors should't display on the screen.
                   unset($_SESSION["profilePhotoErrorMessage"]);
                 }
                 ?>
@@ -89,7 +89,7 @@
                 <?php 
                 if (isset($_SESSION["passwordErrorMessage"])) {
                   echo $_SESSION["passwordErrorMessage"];
-                  //On reload errors, should't display on the screen.
+                  //On reload errors should't display on the screen.
                   unset($_SESSION["passwordErrorMessage"]);
                 }
                 ?>
@@ -104,4 +104,5 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/public/assets/js/landingPage.js"></script>
+
 </html>

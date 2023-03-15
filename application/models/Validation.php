@@ -145,7 +145,7 @@ class Validation
    * 
    */
 
-  public function isValidPassword($password) {
+  public function isValidPassword(string $password) {
     // Validate password strength
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);

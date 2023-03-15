@@ -37,4 +37,4 @@ if (isset($_POST['register'])) {
 
 require "./application/views/register.php";
 
-
+?>

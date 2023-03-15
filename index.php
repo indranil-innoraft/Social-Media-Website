@@ -4,6 +4,7 @@ $resquestedUrl = $_SERVER['REQUEST_URI'];
 $resquestedUrl = rtrim($resquestedUrl);
 session_start();
 
+//Based on the user requested url it will redirect the page.
 switch ($resquestedUrl) {
   case "/":
     require "./application/controllers/login.php";
