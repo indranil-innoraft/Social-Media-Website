@@ -1,0 +1,18 @@
+{
+    "name": "indranil/social.com",
+    "autoload": {
+        "classmap": [
+          "./application/models/database/config.php",
+          "./application/models/database/Database.php",
+          "./application/models/User.php",
+          "./application/models/Validation.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "indranil-innoraft",
+            "email": "indranil.roy@innoraft.com"
+        }
+    ],
+    "require": {}
+}
