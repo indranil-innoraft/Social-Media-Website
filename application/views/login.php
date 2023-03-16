@@ -28,7 +28,7 @@
                 <span class="boldFont">Don't have an accout
                 <a href="/register">Register Now</a></span>
               </div>
-              <a href="#" id="passwordReset">Forgot password?</a>
+              <a href="/forgetpassword" id="passwordReset">Forgot password?</a>
               <div class="error">
                 <?php
                   if (isset($GLOBALS['loginError'])) {

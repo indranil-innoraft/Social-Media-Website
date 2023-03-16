@@ -13,7 +13,7 @@
   <div class="profile">
     <div class="content">
       <h1>Edit Profile</h1>
-      <form action="">
+      <form action="/profile" method = "POST" enctype="multipart/form-data">
         <!-- Photo -->
         <fieldset>
           <div class="grid-35">
@@ -21,20 +21,17 @@
           </div>
           <div class="grid-65">
             <span class="photo" title="Upload your Avatar!"><img src="<?php
-            session_start();
-            if (isset($_SESSION['user']['profilePhoto'])) {
-                echo $_SESSION['user']['profilePhoto'];
-            }
+            echo $_SESSION['user']['profilePhoto'];
             ?>" alt="" srcset="" width="60px" height="60px" style ="position:absolute;top:9px; left:7px;"></span>
-            <input type="file" class="btn"  />
+            <input type="file" accept="image/*" name="profileImage" class="btn"/>
           </div>
         </fieldset>
         <fieldset>
-          <div class="grid-35">
+          <div class="grid-35"> 
             <label for="fname">First Name</label>
           </div>
           <div class="grid-65">
-            <input type="text" id="fname" value="<?php
+            <input type="text" id="fname" name = "firstName" value="<?php
             if (isset($_SESSION['user']['firstName'])) {
                 echo $_SESSION['user']['firstName'];
             } 
@@ -46,12 +43,19 @@
             <label for="lname">Last Name</label>
           </div>
           <div class="grid-65">
-            <input type="text" id="lname" value="<?php
+            <input type="text" id="lname" name = "lastName" value="<?php
             if (isset($_SESSION['user']['lastName'])) {
                 echo $_SESSION['user']['lastName'];
             } 
             ?>" tabindex="2" />
           </div>
+          <div class="error">
+              <?php
+              if (isset($validate->nameError)) {
+                echo $validate->nameError;
+              }
+              ?>
+            </div>
         </fieldset>
         <!-- Description about User -->
         <fieldset>
@@ -59,12 +63,12 @@
             <label for="description">Bio</label>
           </div>
           <div class="grid-65">
-            <textarea name="" id="" cols="30" rows="auto" tabindex="3"> "<?php
+          <textarea id="" name = "bio" cols="30" rows="auto" tabindex="3" ><?php
         
         if (isset($_SESSION['user']['bio'])) {
             echo($_SESSION['user']['bio']);
         }
-        ?>"</textarea>
+        ?></textarea>
           </div>
         </fieldset>
         <!-- Location -->
@@ -86,16 +90,24 @@
             <label for="country">Gender</label>
           </div>
           <div class="grid-65">
-            <input type="text" id="country" tabindex="5" value="<?php
+            <input type="text" id="country" name = "gender" tabindex="5" value="<?php
             if (isset($_SESSION['user']['gender'])) {
                 echo $_SESSION['user']['gender'];
             }
             ?>"/>
+            <div class="error">
+              <?php
+              if (isset($validate->genderError)) {
+                echo $validate->genderError;
+              }
+              ?>
+            </div>
           </div>
         </fieldset>
         <fieldset>
-          <input type="button" class="Btn cancel" name="goBack" value="Go back" />
-          <input type="submit" class="Btn" name="update" value="Save Changes" />
+          <a href="/home" class="anchor">Go back</a>
+          <!-- <input type="button" class="Btn cancel" name="goBack" value="Go back" /> -->
+          <input type="submit" class="Btn" name="updateUserProfile" value="Save Changes" />
         </fieldset>
 
       </form>

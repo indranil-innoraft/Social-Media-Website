@@ -1,2 +1,3 @@
 /vendor/
 /public/assets/image/profilePhoto/
+/application/models/sendOtp.php

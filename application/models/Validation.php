@@ -53,6 +53,13 @@ class Validation {
   public $passwordError ;
 
   /**
+   * Store the gender releted error.
+   *
+   * @var string
+   */
+  public $genderError;
+
+  /**
    * Validate user first and last name.
    *
    * @param string $firstName
@@ -92,8 +99,7 @@ class Validation {
    * 
    */
 
-  function isValidProfilePhoto(string $fileName, string $type, int $size)
-  {
+  function isValidProfilePhoto(string $fileName, string $type, int $size) {
     if (!empty($fileName)) {
       if ($type != "image/png"  && $type != "image/jpeg"  && $type != "image/jpg") {
         $this->uploadedFileError = "please upload a image(jpeg, jpg or png).";
@@ -120,8 +126,7 @@ class Validation {
    * 
    */
 
-  public function isValidEmailAddress(string $emailAddress)
-  {
+  public function isValidEmailAddress(string $emailAddress) {
     if (empty($emailAddress)) {
       $this->emailError = "Email field should not be empty.";
       return false;
@@ -157,6 +162,25 @@ class Validation {
     } 
     else {
       return true;
+    }
+  }
+
+  /**
+   * Check user gener is valid or not.
+   *
+   * @param string $gender
+   * 
+   * @return bololean
+   * 
+   */
+  public function isValidGender(string $gender) {
+    $gender = strtolower($gender);
+    if ($gender == "male" || $gender === "female") {
+      return true;
+    }
+    else {
+      $this->genderError = "Please enter is valid gender.";
+      return false;
     }
   }
 }

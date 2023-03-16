@@ -29,6 +29,7 @@ if (isset($_POST['register'])) {
   }
   else {
     $database->registerUser($_POST['firstName'], $_POST['lastName'], $_POST['radio'], $_POST['email'], $pathOfProfilePhoto, $_POST['bio'], md5($_POST['password']));
+    header ("Location: /login");
   }
 
 }

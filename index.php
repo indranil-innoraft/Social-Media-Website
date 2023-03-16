@@ -29,6 +29,15 @@ switch ($resquestedUrl) {
   case "/logout":
     require "./application/controllers/logout.php";
     break;
+  case "/forgetpassword":
+    require "./application/controllers/forgetPassword.php";
+    break;
+  case "/validateotp":
+    require "./application/controllers/validateOtp.php";
+    break;
+  case "/changepassword":
+    require "./application/controllers/changePassword.php";
+    break;
   default:
     require "./application/controllers/errorPage.php";
 }

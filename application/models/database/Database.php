@@ -66,10 +66,34 @@ class Database extends mysqli {
 
       }
 
-      public function updateUserInformation(string $firstName, string $lastName, string $gender, string $email, string $profilePhoto, string $bio) {
-        $sql = "update user_information set first_name = first_name, last_name = last_name, gender = gender,
-                profile_photo = profile_photo, bio = bio, password = password where email = 'email';";
-        return ($this->connection->query($sql)->fetch_all(MYSQLI_ASSOC)[0]);
+      /**
+       * This function check user email id already exits in the database or not.
+       *
+       * @param string $email
+       * 
+       * @return boolean
+       * 
+       */
+      public function isUserEmailIdExits(string $email) {
+        $sql = "select * from user_information where email = '$email'";
+        if($this->connection->query($sql)->num_rows != 0) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+
+      public function changeUserPassword (string $email, string $password) {
+        $sql = "update user_information set password = '$password' where email = '$email';";
+        $this->connection->query($sql);
+      }
+
+      public function updateUserInformation(string $firstName, string $lastName,
+       string $gender, string $email, string $profilePhoto, string $bio) {
+        $sql = "update user_information set first_name = '$firstName', last_name = '$lastName', gender = '$gender',
+                profile_photo = '$profilePhoto', bio = '$bio'  where email = '$email';";
+        $this->connection->query($sql);
       }
 }
 
