@@ -20,7 +20,7 @@
             <label for="avatar">Your Photo</label>
           </div>
           <div class="grid-65">
-            <span class="photo" title="Upload your Avatar!"><img src="<?php
+            <span class="photo" title="Upload your Avatar!"><img class="circleBtn" src="<?php
             echo $_SESSION['user']['profilePhoto'];
             ?>" alt="" srcset="" width="60px" height="60px" style ="position:absolute;top:9px; left:7px;"></span>
             <input type="file" accept="image/*" name="profileImage" class="btn"/>
@@ -77,7 +77,7 @@
             <label for="location">Email</label>
           </div>
           <div class="grid-65">
-            <input type="text" id="location" tabindex="4" value="<?php
+            <input type="text" id="location" class="emailDisable" tabindex="4" value="<?php
             if (isset($_SESSION['user']['email'])) {
                 echo $_SESSION['user']['email'];
             }

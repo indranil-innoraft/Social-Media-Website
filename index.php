@@ -11,10 +11,10 @@ switch ($resquestedUrl) {
   case "/login":
     require "./application/controllers/login.php";
     break;
-  case "/signIn":
+  case "/signin":
     require "./application/controllers/login.php";
     break;
-  case "/signUp":
+  case "/signup":
     require "./application/controllers/register.php";
     break;
   case "/register":

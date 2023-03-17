@@ -26,7 +26,7 @@
               <input type="password" id="password" name="password" placeholder="Password" required />
               <div>
                 <span class="boldFont">Don't have an accout
-                <a href="/register">Register Now</a></span>
+                <a class="boldFont" href="/register">Register Now</a></span>
               </div>
               <a href="/forgetpassword" id="passwordReset">Forgot password?</a>
               <div class="error">

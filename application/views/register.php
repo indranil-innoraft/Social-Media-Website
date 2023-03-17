@@ -94,6 +94,7 @@
                 }
                 ?>
               </div>
+              <span class="backToLogin">If you have an Account please <a href="/login">Login</a></span>
               <button class="btn" name="register" type="submit">Register</button>
             </div>
           </form>

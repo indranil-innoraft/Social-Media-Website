@@ -16,7 +16,7 @@
     <div class="navbar">
       <div class="navbar_left">
         <div class="logo">
-          <a href="#">Social</a>
+          <a href="#" class="logoText">Social</a>
         </div>
       </div>
 
@@ -115,7 +115,7 @@
         </div>
         <div class="profile">
           <div class="icon_wrap">
-            <img src="<?php
+            <img class = "circleProfile" src="<?php
             session_start();
              echo $_SESSION['user']['profilePhoto']; ?>" alt="profile_pic">
             <span class="name">
@@ -241,21 +241,20 @@
   </div>
   <section class="create-post">
     <img class="create-post__avatar" src="<?php echo $_SESSION['user']['profilePhoto']; ?>" alt="" />
-    <form id="create-post-form" class="create-post__form" action="">
+    <form  action="/home" enctype="multipart/form-data" method = "POST" id="create-post-form" class="create-post__form">
+      <div class="titleSec">Hello <?php echo $_SESSION['user']['firstName'] . " " . $_SESSION['user']['lastName']; ?></div>
       <div class="create-post__text-wrap">
-        <textarea aria-label="Write something about you..." name="post-text" id="create-post-txt" oninput="this.parentNode.dataset.replicatedValue = this.value" placeholder="Write something about you..."></textarea>
+        <textarea aria-label="Write something about you..." class = "outOfFocus" name="postContent" id="create-post-txt" oninput="this.parentNode.dataset.replicatedValue = this.value" placeholder="Write something about you..."></textarea>
       </div>
-  
       <div class="create-post__media-wrap" id="create-post-media-wrap"></div>
-  
       <div class="create-post__buttons">
         <div class="create-post__assets-buttons">
           <button type="button" aria-label="Add an image to the post" class="create-post__asset-btn" for="create-post-media" onclick="this.querySelector('input').click()">
             <img class="icon" src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/camera-tumblr.svg" alt="" />
             Photo
-            <input type="file" name="post-img" id="create-post-media" accept=".png, .jpg, .jpeg, .gif" />
+            <input type="file" name="postImage" id="create-post-media" accept=".png, .jpg, .jpeg, .gif" />
           </button>
-          <!-- <button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
+          <button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
             <img class="icon" src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/quote-tumblr.svg" alt="" />
             Quote
           </button>
@@ -274,23 +273,21 @@
           <button type="button" aria-label="Add a video to the post" class="create-post__asset-btn" for="create-post-media" disabled>
             <img class="icon" src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/video-tumblr.svg" alt="" />
             Video
-          </button> -->
+          </button>
         </div>
-        <button class="create-post__submit" type="submit" disabled id="create-post-submit-btn">Post</button>
+        <button type="submit" name = "doPost" class = "postBtn"><i class="fa-regular fa-paper-plane"></i></button>
       </div>
     </form>
   </section>
-  
+  <?php for($i = count($posts) - 1; $i >= 0; $i--) { ?>
   <section id="posts-container">
     <article class="post">
-      <img class="post__avatar" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/avatar-tumblr.png" alt="" />
-  
+      <img class="post__avatar" src="<?php echo $posts[$i]['profile_photo']; ?>" alt="/profile image" />
       <div class="post__content">
         <header class="post__header">
-          <p class="post__user">galactiqangel</p>
-  
+          <p class="post__user"><?php  echo $posts[$i]['first_name'] . " " . $posts[$i]['last_name']; ?></p>  
           <div class="post__meta">
-            <p class="post__reblogs">3,908</p>
+            <p class="post__reblogs"><?php  echo $posts[$i]['post_time']; ?></p>
   
             <button class="post__header-btn">
               <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/reblog-tumblr.svg" alt="" />
@@ -302,117 +299,21 @@
         </header>
   
         <div class="post__body">
-          <img class="post__img" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/liz-lee.jpg" alt="" />
-          <a href="https://es.wikipedia.org/wiki/My_Life_as_Liz" class="post__text">My Life As Liz</a>
-        </div>
-  
-        <div class="post__footer">
-          <span>#2010s</span>
-          <span>#tumblr</span>
-          <span>#codepen</span>
+          <img class="post__img" src="<?php echo $posts[$i]['post_image']; ?>" alt="" />
+          <a href="https://es.wikipedia.org/wiki/My_Life_as_Liz" class="post__text"><?php $posts[$i]['post_content']; ?></a>
+        <?php echo $posts[$i]['post_content']; ?>
+
         </div>
       </div>
     </article>
-  
-    <article class="post">
-      <img class="post__avatar" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/avatar-tumblr.png" alt="" />
-  
-      <div class="post__content">
-        <header class="post__header">
-          <p class="post__user">galactiqangel</p>
-  
-          <div class="post__meta">
-            <p class="post__reblogs">3,908</p>
-  
-            <button class="post__header-btn">
-              <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/reblog-tumblr.svg" alt="" />
-            </button>
-            <button class="post__header-btn">
-              <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/heart-tumblr.svg" alt="" />
-            </button>
-          </div>
-        </header>
-  
-        <div class="post__body">
-          <img class="post__img" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/steven-universe.webp" alt="" />
-          <a href="https://es.wikipedia.org/wiki/Steven_Universe" class="post__text">Steven Universe</a>
-        </div>
-  
-        <div class="post__footer">
-          <span>#2010s</span>
-          <span>#tumblr</span>
-          <span>#codepen</span>
-        </div>
-      </div>
-    </article>
-  
-    <article class="post">
-      <img class="post__avatar" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/avatar-tumblr.png" alt="" />
-  
-      <div class="post__content">
-        <header class="post__header">
-          <p class="post__user">galactiqangel</p>
-  
-          <div class="post__meta">
-            <p class="post__reblogs">3,908</p>
-  
-            <button class="post__header-btn">
-              <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/reblog-tumblr.svg" alt="" />
-            </button>
-            <button class="post__header-btn">
-              <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/heart-tumblr.svg" alt="" />
-            </button>
-          </div>
-        </header>
-  
-        <div class="post__body">
-          <img class="post__img" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/catching-fire.webp" alt="" />
-          <a href="https://en.wikipedia.org/wiki/The_Hunger_Games:_Catching_Fire" class="post__text">The Hunger Games...?</a>
-        </div>
-  
-        <div class="post__footer">
-          <span>#2010s</span>
-          <span>#tumblr</span>
-          <span>#codepen</span>
-        </div>
-      </div>
-    </article>
-  
-    <article class="post">
-      <img class="post__avatar" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/avatar-tumblr.png" alt="" />
-  
-      <div class="post__content">
-        <header class="post__header">
-          <p class="post__user">galactiqangel</p>
-  
-          <div class="post__meta">
-            <p class="post__reblogs">3,908</p>
-  
-            <button class="post__header-btn">
-              <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/reblog-tumblr.svg" alt="" />
-            </button>
-            <button class="post__header-btn">
-              <img src="https://raw.githubusercontent.com/Javieer57/create-post-component/43c8008a45b699957d2070cc23362f1953c65d78/icons/heart-tumblr.svg" alt="" />
-            </button>
-          </div>
-        </header>
-  
-        <div class="post__body">
-          <img class="post__img" src="https://raw.githubusercontent.com/Javieer57/create-post-component/design/2010/img/icecream-twerk.webp" alt="" />
-        </div>
-  
-        <div class="post__footer">
-          <span>#2010s</span>
-          <span>#tumblr</span>
-          <span>#codepen</span>
-        </div>
-      </div>
-    </article>
+
+  <?php } ?>
   </section>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="./public/assets/js/home.js"></script>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 
 </html>

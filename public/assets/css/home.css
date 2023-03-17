@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,1;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
 *{
   margin: 0;
@@ -6,7 +7,15 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  font-family: 'Montserrat';
+}
+
+.outOfFocus:focus {
+ outline: none;
+}
+
+.logoText {
+	font-family: 'Montserrat';
+	color: #f71543;
 }
 
 body{
@@ -39,9 +48,23 @@ a{
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+.postBtn {
+	padding: 15px;
+	background:none;
+	color:#3b80f9;
+	border: none;
+}
+.postBtn i {
+	font-size: 1.5rem;
+}
+
+.postBtn:hover {
+	filter: brightness(1.2);
+}
+
 .navbar .navbar_left .logo a{
    font-family: 'Trade Winds';
-   color : #6e11bb;
+   color : #f71543;
    font-size: 50px;
 }
 
@@ -51,6 +74,7 @@ a{
 
 .navbar .navbar_right img{
   width: 35px;
+	height: 35px;
 }
 
 .navbar .navbar_right .icon_wrap{
@@ -286,9 +310,15 @@ a{
    display: none;
 }
 
+.circleProfile {
+	border-radius: 50%;
+	width: 20px;
+	height: 30px;
+}
+
 .popup .notification_dd li.title{
   font-weight: 700;
-  color: #3b80f9;
+  color: rgb(59, 130, 250);
   display: flex;
   justify-content: center;
   position: relative;
@@ -323,6 +353,7 @@ body {
 	background-color: #385774;
 	font-family: var(--primary-font);
 	font-size: 100%;
+	background: linear-gradient(to top, #f71543, #eb833e) fixed;
 }
 
 img {
@@ -487,8 +518,8 @@ https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/ */
 
 .post__user {
 	font-weight: 600;
-	font-size: 14px;
-	color: #aeaeae;
+	font-size: 17px;
+	color: rgb(59, 130, 250);
 }
 
 .post__meta {
@@ -503,7 +534,7 @@ https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/ */
 	font-weight: bold;
 	display: inline-block;
 	padding: 3px 5px;
-	background-color: #aeaeae;
+	background-color: rgb(59, 130, 250);
 	border-radius: 5px;
 }
 
