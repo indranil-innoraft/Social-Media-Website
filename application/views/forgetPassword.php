@@ -41,5 +41,4 @@
     <p>Did you remember? <a href="/login">Sign In</a></p>
   </div>
 </body>
-
 </html>

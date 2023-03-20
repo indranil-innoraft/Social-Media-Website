@@ -44,5 +44,4 @@
   </div>
   <script src="./public/assets/js/validateOtp.js"></script>
 </body>
-
 </html>
