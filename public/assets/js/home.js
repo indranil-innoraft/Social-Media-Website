@@ -17,7 +17,29 @@ $(".profile .icon_wrap").click(function(){
     $(".popup").hide();
   });
 
+  $('#show-more-btn').click(function() {
+    $("#show-more-content").toggle("show", function() {
+      
+    });
+  })
 
+  $(document).ready(() => {
+    $("#imagePreview").css("display", "none");
+    $("#create-post-media").change(function () {
+      const file = this.files[0];
+      if (file) {
+        let reader = new FileReader();
+        reader.onload = function (event) {
+          $("#imagePreview").attr("src", event.target.result);
+          $("#imagePreview").css("display", "block");
+        };
+        reader.readAsDataURL(file);
+      }
+      else {
+        $("#imagePreview").css("display","none");
+      }
+    });
+  });
 //   let createPostForm = document.querySelector("#create-post-form");
 // let createPostMedia = document.querySelector("#create-post-media");
 // let createPostText = document.querySelector("#create-post-txt");

@@ -96,15 +96,15 @@ class Database extends mysqli {
         $this->connection->query($sql);
       }
 
-      public function doPost(string $userEmailAddress, string $postContent, string $psotImage) {
-        $sql = "insert into  user_post_details (user_email_address,  post_content,  post_image)
-              values('$userEmailAddress', '$postContent', '$psotImage');";
+      public function doPost(string $userEmailAddress, string $postContent, string $postImage, string $postVideo, string $postAudio) {
+        $sql = "insert into  user_post_details (user_email_address,  post_content,  post_image, post_video, post_audio)
+              values('$userEmailAddress', '$postContent', '$postImage', '$postVideo', '$postAudio');";
         $this->connection->query($sql);
       }
 
       public function getPosts() {
         // $sql = "SELECT * FROM user_post_details;";
-        $sql = "SELECT user.profile_photo, posts.post_time, user.first_name, user.last_name, user.email, posts.post_image, posts.post_content FROM user_information as user JOIN user_post_details as posts ON posts.user_email_address = user.email;";
+        $sql = "SELECT user.profile_photo, posts.post_time, user.first_name, user.last_name, user.email, posts.post_image, posts.post_content, posts.post_audio, posts.post_video FROM user_information as user JOIN user_post_details as posts ON posts.user_email_address = user.email;";
         return ($this->connection->query($sql)->fetch_all(MYSQLI_ASSOC));
       }
 }
