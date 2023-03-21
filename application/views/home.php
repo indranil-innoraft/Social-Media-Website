@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +12,14 @@
 </head>
 
 <body>
-
+<div id="loading">
+  <img id="loading-image" src = "/public/assets/image/1475.gif" alt="Loading..." />
+</div>
   <div class="wrapper">
     <div class="navbar">
       <div class="navbar_left">
         <div class="logo">
-          <a href="#" class="logoText">Social</a>
+          <a href="/home" class="logoText">Social</a>
         </div>
       </div>
 
@@ -271,6 +274,8 @@
       </div>
     </form>
   </section>
+  <a href="#" id="scroll"><span></span></a>
+  <div class="container-post-frame">
   <?php for($i = count($posts) - 1; $i >= 0; $i--) { ?>
   <section id="posts-container">
     <article class="post">
@@ -304,6 +309,10 @@
     </article>
   </section>
   <?php } ?>
+</div>
+<div class="show-more-btn">
+  <button>Show More</button>
+</div>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="./public/assets/js/home.js"></script>

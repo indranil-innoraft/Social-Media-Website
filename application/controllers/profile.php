@@ -8,6 +8,10 @@ $uploadedFileError = "";
 session_start();
 
 
+if (!isset($_SESSION['user']['email'])) {
+  header ('Location: /login');
+}
+
 if (isset($_POST['updateUserProfile'])) {
   if (isset($_FILES['profileImage']['name'])) {
     if ( $validate->isValidName($_POST['firstName'], $_POST['lastName']) && $validate->isValidProfilePhoto($_FILES['profileImage']['name'], $_FILES['profileImage']['type'], $_FILES['profileImage']['size'])  && $validate->isValidGender($_POST['gender'])) {

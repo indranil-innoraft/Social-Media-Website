@@ -23,6 +23,12 @@ $(".profile .icon_wrap").click(function(){
     });
   })
 
+  $(window).on('load', function () {
+    $('#loading').hide();
+  }) 
+  
+  var x = 10;
+
   $(document).ready(() => {
     $("#imagePreview").css("display", "none");
     $("#create-post-media").change(function () {
@@ -40,6 +46,29 @@ $(".profile .icon_wrap").click(function(){
       }
     });
   });
+  $( window ).on( "load", function() {
+    $(".container-post-frame > section:nth-child(-n + "+x+" ").css("display", "block");
+    x += 10;
+  })
+
+  $('.show-more-btn > button').click(function() {
+    $(".container-post-frame > section:nth-child(-n + "+x+" ").css("display", "block");
+    x += 10;
+  })
+
+  $('#scroll').click(function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '1000');
+  });
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  if (scroll >= 300) {
+    $("#scroll").addClass("show");
+  } 
+  else {
+    $("#scroll").removeClass("show");
+  }
+});
 //   let createPostForm = document.querySelector("#create-post-form");
 // let createPostMedia = document.querySelector("#create-post-media");
 // let createPostText = document.querySelector("#create-post-txt");

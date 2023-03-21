@@ -3,9 +3,9 @@
 require "./vendor/autoload.php";
 session_start();
 
-// if (!isset($_SESSION['user']['email'])) {
-//   header ('Location: /login');
-// }
+if (!isset($_SESSION['user']['email'])) {
+  header ('Location: /login');
+}
 
 
 $database = new Database();
