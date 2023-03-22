@@ -15,22 +15,27 @@
       <img src="" id="signupLogo"/>
       
       <h2 class="formTitle">
-        Login to your account
+        Rest your password
       </h2>
       
     <div class="inputDiv">
       <label class="inputLabel" for="password">New Password</label>
       <input type="password" id="password" name="newPassword" required>
     </div>
-    <div class="error">
+    <div class="error content-error">
       <?php
-      if (isset($validate->passwordError)) {
-        echo $validate->passwordError;
-        //On reload same error message should not displayed on the screen.
-        unset($validate->passwordError);
+      if (isset($GLOBALS['newPasswordError'])) {
+        echo $GLOBALS['newPasswordError'];
       }
       ?>
     </div>
+    <span class="success">
+    <?php
+    if (isset($GLOBALS['successMessage'])) {
+      echo $GLOBALS['successMessage'] . 'you can <a href="/login">Login</a>';
+    }
+    ?>
+    </span>
     <div class="buttonWrapper">
       <button type="submit" name = "continue" id="submitButton" 
       class="submitButton pure-button pure-button-primary">

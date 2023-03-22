@@ -1,5 +1,7 @@
 <?php
 
+require "./vendor/autoload.php";
+
 /**
  * Validate user inputs information.
  * 
@@ -35,6 +37,13 @@ class Validation {
    */
 
   public $uploadedFileError ;
+
+  /**
+   * Store email id exits or not.
+   *
+   * @var boolean
+   */
+  public $emailExitsError;
 
   /**
    * Store email error related information.
@@ -181,6 +190,47 @@ class Validation {
     else {
       $this->genderError = "Please enter is valid gender.";
       return false;
+    }
+  }
+
+  /**
+   * Validate user email address.
+   *
+   * @param string $emailAddress
+   * 
+   * @return boolean
+   * 
+   */
+
+   public function isEmailAddressExits(string $emailAddress) {
+    if (empty($emailAddress)) {
+      $this->emailExitsError = "Email field should not be empty.";
+      return false;
+    } 
+    else {
+      // Create a client with a base URI
+      $client = new GuzzleHttp\Client([
+        'base_uri' => 'https://api.apilayer.com'
+      ]);
+
+      $response = $client->request('GET', "/email_verification/check?email=" . $emailAddress, [
+        "headers" => [
+          'Content-Type' => 'text/plain',
+          'apikey' => 'STTONsCShOh5qIQFmndLNgiz3nfgFRN9'
+        ]
+      ]);
+
+      //Getting JSON data form $response variable.
+      $body = $response->getBody();
+      //Convert JSON data into an object.
+      $arr_body = json_decode($body);
+      if ($arr_body->format_valid && $arr_body->smtp_check) {
+        return true;
+      } 
+      else {
+        $this->emailExitsError = "Email is not exits.";
+        return false;
+      }
     }
   }
 }

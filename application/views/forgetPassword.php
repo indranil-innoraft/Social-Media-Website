@@ -10,6 +10,9 @@
 </head>
 
 <body>
+<div id="loading">
+  <img id="loading-image" src = "/public/assets/image/1475.gif" alt="Loading..." />
+</div>
   <div class="container-center">
     <h2>Don't Worry!</h2>
     <form action = "/forgetpassword" method = "POST">
@@ -18,21 +21,17 @@
         and we can do the rest
       </h4>
       <formgroup>
-        <input type="text" name="email" />
+        <input type="email" name="email" required/>
         <label for="email"><br>Email</label>
         <span>enter your email</span>
       </formgroup>
       <div class="error">
         <?php 
-          if (isset($error)) {
-            echo $error;
-            //On reload error message should not display on the screen.
-            unset($error);
+          if (isset($GLOBALS['error'])) {
+            echo $GLOBALS['error'];
           }
-          if (isset($otpGeneratingProblem)) {
-            echo $otpGeneratingProblem;
-            //On reload error message should not display on the screen.
-            unset($otpGeneratingProblem);
+          if (isset($GLOBALS['otpGeneratingProblem'])) {
+            echo $GLOBALS['otpGeneratingProblem'];
           }
         ?>
       </div>
@@ -41,4 +40,7 @@
     <p>Did you remember? <a href="/login">Sign In</a></p>
   </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="public/assets/js/forgetPassword.js"></script>
 </html>

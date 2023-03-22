@@ -9,10 +9,11 @@ if (isset($_POST['continue'])) {
   if ($validate->isValidPassword($_POST['newPassword'])) {
     session_start();
     $database->changeUserPassword($_SESSION['userEmail'], md5($_POST['newPassword']));
-    header ("Location: /login");
+    session_destroy();
+    $GLOBALS['successMessage'] = "Password Updated successfully.";
   }
   else {
-    session_destroy();
-  }
+    $GLOBALS['newPasswordError'] = $validate->passwordError;
+  } 
 }
 require "./application/views/changePassword.php";

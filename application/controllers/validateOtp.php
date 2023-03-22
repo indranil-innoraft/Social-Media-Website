@@ -8,9 +8,14 @@ if (isset($_POST['validateOtp'])) {
     header ("Location: /changepassword");
   }
   else {
-    $error = "Otp is not valid.";
-    session_destroy();
+    $GLOBALS['error'] = "Otp is not valid.";
   }
+}
+
+if (isset($_POST['goBack'])) {
+  session_start();
+  session_destroy();
+  header('Location: /forgetpassword');
 }
 
 require "./application/views/validateOtp.php";

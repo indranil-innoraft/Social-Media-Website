@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
     header("Location: /home");
   }
   else {
-    $GLOBALS['loginError'] = "login unsuccessfull.";
+    $GLOBALS['loginError'] = "Invalid Email Address or Password.";
   }
 }
 

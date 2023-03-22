@@ -26,3 +26,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
    OTPInput();
 });
+
+$(window).on('load', function () {
+  setTimeout(function(){
+    $('#loading').fadeOut('slow', function () {
+    });
+},100);
+});

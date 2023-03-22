@@ -40,15 +40,15 @@ $(document).ready(function(){
 
   $(".passwordClass>input").keyup(function(){ 
     var passRegx =  /(?=.*[!#$%&?^*@~() "])(?=.{6,})/;
-    if ($(this).val().length < 2 ) {
-      $(".passwordClass>.helpPassword").text("Password is too short.").css("color","red");
-    }
-    else if ($(this).val().length < 6 ) {
-      $(".passwordClass>.helpPassword").text("Media strength password").css("color","orange");
-    }
-    else if ($(this).val().length > 6) {
-      $(".passwordClass>.helpPassword").text("Good strength password").css("color","green");
-    }
+    // if ($(this).val().length < 2 ) {
+    //   $(".passwordClass>.helpPassword").text("Password is too short.").css("color","red");
+    // }
+    // else if ($(this).val().length < 6 ) {
+    //   $(".passwordClass>.helpPassword").text("Media strength password").css("color","orange");
+    // }
+    // else if ($(this).val().length > 6) {
+    //   $(".passwordClass>.helpPassword").text("Good strength password").css("color","green");
+    // }
     if(passRegx.test($(this).val())){ 
       $(this).css("border","green 2px solid"); 
     }
@@ -59,3 +59,30 @@ $(document).ready(function(){
   });
 
 }); 
+
+// $(".email-input").focusout(function () {
+//   $.ajax({
+//     url: "/register",
+//     method: "POST",
+//     data: { emailAddress: $(this).val() },
+//     datatype: "text",
+//     success: function () {
+//       $(".otpCheck").removeClass('disabledField');
+//     },
+//   })
+// });
+
+// $(".otpCheck").focusout(function () {
+//   $.ajax({
+//     url: "/sendotponregistration",
+//     method: "POST",
+//     data: { otpCheck: $(this).val() },
+//     datatype: "text",
+//     success: function (data) {
+//       if(data) {
+//         $(".otpCheck").css("border", "2px solid green");
+//       }
+//     },
+//   })
+// });
+

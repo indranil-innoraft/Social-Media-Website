@@ -13,7 +13,7 @@ if (isset($_POST['email'])) {
     header ("Location: /validateotp");
   }
   else {
-    $error = "User email Id not exits.";
+    $GLOBALS['error'] = "User email Address not exits.";
   }
 }
 require "./application/views/forgetPassword.php";

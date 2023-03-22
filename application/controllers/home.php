@@ -7,7 +7,6 @@ if (!isset($_SESSION['user']['email'])) {
   header ('Location: /login');
 }
 
-
 $database = new Database();
 $validate = new Validation();
 
