@@ -69,6 +69,19 @@ $(window).scroll(function () {
     $("#scroll").removeClass("show");
   }
 });
+var themeBtn = document.getElementById("theme");
+var themeIcon = document.getElementById("themeIcon");
+var themeText = document.getElementById("themeText");
+
+themeBtn.onclick = function () {
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")) {
+    themeText.innerHTML = "Light theme";
+  }
+  else {
+    themeText.innerHTML = "Dark theme";
+  }
+}
 //   let createPostForm = document.querySelector("#create-post-form");
 // let createPostMedia = document.querySelector("#create-post-media");
 // let createPostText = document.querySelector("#create-post-txt");

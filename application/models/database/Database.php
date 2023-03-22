@@ -84,11 +84,33 @@ class Database extends mysqli {
         }
       }
 
+      /**
+       * Change the password beased on the user email address.
+       *
+       * @param string $email
+       * @param string $password
+       * 
+       * @return void
+       * 
+       */
       public function changeUserPassword (string $email, string $password) {
         $sql = "update user_information set password = '$password' where email = '$email';";
         $this->connection->query($sql);
       }
 
+      /**
+       * Update the User information.
+       *
+       * @param string $firstName
+       * @param string $lastName
+       * @param string $gender
+       * @param string $email
+       * @param string $profilePhoto
+       * @param string $bio
+       * 
+       * @return object
+       * 
+       */
       public function updateUserInformation(string $firstName, string $lastName,
        string $gender, string $email, string $profilePhoto, string $bio) {
         $sql = "update user_information set first_name = '$firstName', last_name = '$lastName', gender = '$gender',
@@ -96,12 +118,30 @@ class Database extends mysqli {
         $this->connection->query($sql);
       }
 
+      /**
+       * To make a new post.
+       *
+       * @param string $userEmailAddress
+       * @param string $postContent
+       * @param string $postImage
+       * @param string $postVideo
+       * @param string $postAudio
+       * 
+       * @return void
+       * 
+       */
       public function doPost(string $userEmailAddress, string $postContent, string $postImage, string $postVideo, string $postAudio) {
         $sql = "insert into  user_post_details (user_email_address,  post_content,  post_image, post_video, post_audio)
               values('$userEmailAddress', '$postContent', '$postImage', '$postVideo', '$postAudio');";
         $this->connection->query($sql);
       }
 
+      /**
+       * Retrive all the post from the database.
+       *
+       * @return object
+       * 
+       */
       public function getPosts() {
         // $sql = "SELECT * FROM user_post_details;";
         $sql = "SELECT user.profile_photo, posts.post_time, user.first_name, user.last_name, user.email, posts.post_image, posts.post_content, posts.post_audio, posts.post_video FROM user_information as user JOIN user_post_details as posts ON posts.user_email_address = user.email;";

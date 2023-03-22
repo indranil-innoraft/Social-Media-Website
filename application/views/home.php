@@ -136,9 +136,9 @@
               <li class="profile_li"><a class="profile" href="/profile"><span class="picon"><i class="fas fa-user-alt"></i>
                   </span>Profile</a>
               </li>
-              <li><a class="address" href="#"><span class="picon"><i class="fas fa-map-marker"></i></span>Address</a>
+              <li id="theme"><a  class="address"><span class="picon"><i class="fa-solid fa-circle-half-stroke" style="color: rgb(127, 141, 176);"></i></span><span id="themeText">Dark Theme</span></a>
               </li>
-              <li><a class="settings" href="#"><span class="picon"><i class="fas fa-cog"></i></span>Settings</a></li>
+              <!-- <li><a class="settings" href="#"><span class="picon"><i class="fas fa-cog"></i></span>Settings</a></li> -->
               <li><a class="logout" href="/logout"><span class="picon"><i class="fas fa-sign-out-alt"></i></span>Logout</a>
               </li>
             </ul>
@@ -285,10 +285,7 @@
           <p class="post__user"><?php  echo $posts[$i]['first_name'] . " " . $posts[$i]['last_name']; ?></p>  
           <div class="post__meta">
             <p class="post__reblogs"><?php echo round(abs(time() - strtotime($posts[$i]['post_time'])) /
-                3600) . " hours ago"; ?></p>
-            <button class="post__header-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
+                3600) . " hours ago"; ?></p>  
           </div>
         </header>
         <div class="post-item">
@@ -303,7 +300,11 @@
           <img class="post__img" src="<?php echo $posts[$i]['post_image']; ?>" alt="" />
           <a href="https://es.wikipedia.org/wiki/My_Life_as_Liz" class="post__text"><?php $posts[$i]['post_content']; ?></a>
         <?php echo $posts[$i]['post_content']; ?>
-
+        </div>
+        <div class="reaction">
+        <i class="fa-regular fa-heart"></i>
+          <!-- <span class="reaction-section"><span class="count">16</span><i class="fa-regular fa-thumbs-up"></i></span>
+          <span class="reaction-section"><span class="count">16</span><i class="fa-regular fa-thumbs-down"></i></span> -->
         </div>
       </div>
     </article>

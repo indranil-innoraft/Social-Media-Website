@@ -30,7 +30,7 @@ if (isset($_POST['doPost'])) {
     //If uploaded image is valid then send the image upload_image folder.
     move_uploaded_file($_FILES['postVideo']['tmp_name'], $pathOfUploadedVideo);
   }
-  $database->doPost($_SESSION['user']['email'], $_POST['postContent'], $pathOfProfilePhoto, $pathOfUploadedVideo, $pathOfUplodedAudio);
+  $database->doPost($_SESSION['user']['email'], htmlspecialchars($_POST['postContent'], ENT_QUOTES), $pathOfProfilePhoto, $pathOfUploadedVideo, $pathOfUplodedAudio);
   //If uploaded image is valid then send the image upload_image folder.
   // move_uploaded_file($_FILES['postAudio']['tmp_name'], $pathOfProfilePhoto);
   // $pathOfProfilePhoto = "public/assets/uploadedVideo/" . $_FILES['postVideo']['name'];
