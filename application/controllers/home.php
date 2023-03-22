@@ -4,6 +4,7 @@ require "./vendor/autoload.php";
 session_start();
 
 if (!isset($_SESSION['user']['email'])) {
+  session_destroy();
   header ('Location: /login');
 }
 

@@ -5,3 +5,4 @@
 /public/assets/uploadedAudio
 /public/assets/uploadedVideo
 public/assets/image/
+application/models/sendMailOnRegistration.php 
