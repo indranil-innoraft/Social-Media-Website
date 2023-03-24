@@ -33,7 +33,7 @@ if (isset($_POST['updateUserProfile'])) {
   else {
     if ( $validate->isValidName($_POST['firstName'], $_POST['lastName']) && $validate->isValidGender($_POST['gender'])) {
     $database->updateUserInformation($_POST['firstName'], $_POST['lastName'], 
-    $_POST['gender'], $_SESSION['user']['email'], $_SESSION['user']['profilePhoto'], $_POST['bio']);
+    $_POST['gender'], $_SESSION['user']['email'], $_SESSION['user']['profilePhoto'], htmlspecialchars($_POST['bio'], ENT_QUOTES));
 
     $data = $database->retriveUserInformation($_SESSION['user']['email']);
     $_SESSION['user']['firstName'] = $data['first_name'];
@@ -41,6 +41,7 @@ if (isset($_POST['updateUserProfile'])) {
     $_SESSION['user']['gender'] = $data['gender'];
     $_SESSION['user']['profilePhoto'] = $data['profile_photo'];
     $_SESSION['user']['bio'] = $data['bio'];
+    $GLOBALS['successMessage'] = "Profile updated successfully.";
    }
   } 
 }

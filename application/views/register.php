@@ -20,11 +20,11 @@
               <div class="vertical-field">
                 <span class="firstName">
                   <label for="firstName">First Name</label>
-                  <input name="firstName" type="text" id="name" placeholder="First Name"  />
+                  <input name="firstName" type="text" id="name" placeholder="First Name"  required/>
                 </span>
                 <span class="lastName">
                 <label for="lastName">Surname</label>
-                <input name="lastName" type="text" id="name" placeholder="Surname"  />
+                <input name="lastName" type="text" id="name" placeholder="Surname"  required/>
                 </span>
               </div>
               <div class="error">
@@ -43,7 +43,8 @@
               </div>
               <span class="emailClass">
               <label for="email">Email address</label>
-              <input name="email" class="email-input" id="email" placeholder="name@example.com"  title="Enter a valid email address" />
+              <input name="email" class="email-input" id="email" 
+              placeholder="name@example.com"  title="Enter a valid email address" required/>
               </span>
               <div class="error">
                 <?php 
@@ -55,14 +56,9 @@
                 }
                 ?>
               </div>
-              <!-- <label for="otp">OTP</label>
-              <input name="otp" type="number" class="otpCheck disabledField"  required/>
-              </span>
-              <div class="error">
-                ?>
-              </div> -->
               <label for="profileImage">Profile Image</label>
-              <input name="profileImage" id="file" type="file" accept="image/*" placeholder="Profile Image"  title="Upload your profile image." />
+              <input name="profileImage" id="file" type="file" accept="image/*" 
+              placeholder="Profile Image"  title="Upload your profile image." />
               <span class="fileInfo"></span>
               <div class="error">
                 <?php 
@@ -77,7 +73,8 @@
               </span>
               <span class="passwordClass">
               <label for="password">Password</label>
-              <input type="password" id="password" placeholder="Password" name = "password"  title="Must be at least 6 characters" />
+              <input type="password" id="password" placeholder="Password" name = "password"  
+              title="Must be at least 6 characters" />
               <span class="helpPassword"></span>
               </span>
               <small class="messageHelp">Must be at least 6 characters</small>
@@ -88,7 +85,8 @@
                 }
                 ?>
               </div>
-              <span class="backToLogin">If you have an Account please <a href="/login">Login</a><br></span>
+              <span class="backToLogin">If you have an Account please 
+                <a href="/login">Login</a><br></span>
               <span class="success">
               <?php
               if (isset($GLOBALS['successMessage'])) {
@@ -104,6 +102,8 @@
     </div>
   </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
+integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous"
+ referrerpolicy="no-referrer"></script>
 <script src="/public/assets/js/landingPage.js"></script>
 </html>

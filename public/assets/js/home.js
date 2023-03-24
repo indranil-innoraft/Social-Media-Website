@@ -82,6 +82,12 @@ themeBtn.onclick = function () {
     themeText.innerHTML = "Dark theme";
   }
 }
+
+var loveIcons =document.getElementsByClassName("loveIcon");
+
+$('.fa-regular').click(function() {
+  $(this).toggleClass("fa-solid").css("color","red");
+});
 //   let createPostForm = document.querySelector("#create-post-form");
 // let createPostMedia = document.querySelector("#create-post-media");
 // let createPostText = document.querySelector("#create-post-txt");

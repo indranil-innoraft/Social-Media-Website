@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/public/assets/css/profile.css">
 </head>
 <body>
-
+<div id="loading">
+  <img id="loading-image" src = "/public/assets/image/1475.gif" alt="Loading..." />
+</div>
 <div class="wrapper">
   <div class="profile">
     <div class="content">
@@ -105,6 +107,13 @@
           </div>
         </fieldset>
         <fieldset>
+        <div class="error success">
+              <?php
+              if (isset($GLOBALS['successMessage'])) {
+                echo $GLOBALS['successMessage'];
+              }
+              ?>
+            </div>
           <a href="/home" class="anchor">Go back</a>
           <!-- <input type="button" class="Btn cancel" name="goBack" value="Go back" /> -->
           <input type="submit" class="Btn" name="updateUserProfile" value="Save Changes" />
@@ -114,5 +123,13 @@
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" 
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="./public/assets/js/profile.js"></script>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 </html>

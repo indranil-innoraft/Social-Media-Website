@@ -20,7 +20,7 @@
       
     <div class="inputDiv">
       <label class="inputLabel" for="password">New Password</label>
-      <input type="password" id="password" name="newPassword" required>
+      <input type="password" id="password" name="newPassword">
     </div>
     <div class="error content-error">
       <?php

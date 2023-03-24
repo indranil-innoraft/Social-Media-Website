@@ -38,6 +38,9 @@ switch ($resquestedUrl) {
   case "/changepassword":
     require "./application/controllers/changePassword.php";
     break;
+  case "/chatroom":
+    require "./application/controllers/chat.php";
+    break;
   default:
     require "./application/controllers/errorPage.php";
 }
