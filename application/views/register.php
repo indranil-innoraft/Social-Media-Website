@@ -6,11 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>social.com</title>
+  <meta name="theme-color" content="#9F2B00">
   <link rel="stylesheet" href="../../public/assets/css/landingPage.css">
   <link rel="icon" href="/public/assets/image/titleIcon.png" type="image/x-icon">
 </head>
 
 <body>
+<div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+          <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register Now</a></li>
+            <li><a href="/forgetpassword">Reset Your password</a></li>
+            <li><a href="/about-us">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="wrapper">
       <div class="contentWrapper">
@@ -19,11 +36,11 @@
             <div class="formGroup">
               <div class="vertical-field">
                 <span class="firstName">
-                  <label for="firstName">First Name</label>
+                  <label for="firstName">First Name *</label>
                   <input name="firstName" type="text" id="name" placeholder="First Name"  required/>
                 </span>
                 <span class="lastName">
-                <label for="lastName">Surname</label>
+                <label for="lastName">Surname *</label>
                 <input name="lastName" type="text" id="name" placeholder="Surname"  required/>
                 </span>
               </div>
@@ -42,7 +59,7 @@
                 <label for='female'>Female</label>
               </div>
               <span class="emailClass">
-              <label for="email">Email address</label>
+              <label for="email">Email address *</label>
               <input name="email" class="email-input" id="email" 
               placeholder="name@example.com"  title="Enter a valid email address" required/>
               </span>

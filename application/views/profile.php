@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <meta name="theme-color" content="#9F2B00">
     <link rel="stylesheet" href="/public/assets/css/profile.css">
 </head>
 <body>

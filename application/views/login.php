@@ -6,11 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>social.com</title>
+  <meta name="theme-color" content="#9F2B00">
   <link rel="stylesheet" href="../../public/assets/css/landingPage.css">
   <link rel="icon" href="/public/assets/image/titleIcon.png" type="image/x-icon">
 </head>
 
 <body>
+<div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register Now</a></li>
+            <li><a href="/forgetpassword">Reset Your password</a></li>
+            <li><a href="/about-us">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="wrapper">
       <div class="contentWrapper">

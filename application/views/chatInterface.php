@@ -6,6 +6,7 @@
     user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat Room</title>
+  <meta name="theme-color" content="#9F2B00">
   <link href="style.ee53b4cd773cd6772237.css" rel="stylesheet">
 </head>
 <link rel="stylesheet" href="/public/assets/css/chat.css">

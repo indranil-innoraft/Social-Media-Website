@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forget Password</title>
+  <meta name="theme-color" content="#9F2B00">
   <link rel="stylesheet" href="/public/assets/css/forgetPassword.css">
   <link rel="icon" href="/public/assets/image/titleIcon.png" type="image/x-icon">
 </head>
