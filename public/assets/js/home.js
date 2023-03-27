@@ -74,20 +74,38 @@ var themeIcon = document.getElementById("themeIcon");
 var themeText = document.getElementById("themeText");
 
 themeBtn.onclick = function () {
+  var theme;
   document.body.classList.toggle("dark-theme");
   if(document.body.classList.contains("dark-theme")) {
     themeText.innerHTML = "Light theme";
+    theme = "light";
   }
   else {
     themeText.innerHTML = "Dark theme";
+    theme = "dark";
   }
+  localStorage.setItem("PageTheme", JSON.stringify(theme));
 }
+
+setInterval(() => {
+  let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
+  if(getTheme === "dark"){
+    document.body.classList.remove("dark-theme");
+    themeText.innerHTML = "Dark theme";
+  }else{
+    document.body.classList.add("dark-theme");
+    themeText.innerHTML = "Light theme";
+  }
+}, 1);
 
 var loveIcons =document.getElementsByClassName("loveIcon");
 
 $('.fa-regular').click(function() {
   $(this).toggleClass("fa-solid").css("color","red");
 });
+
+
+
 //   let createPostForm = document.querySelector("#create-post-form");
 // let createPostMedia = document.querySelector("#create-post-media");
 // let createPostText = document.querySelector("#create-post-txt");

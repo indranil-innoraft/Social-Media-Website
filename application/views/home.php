@@ -136,6 +136,27 @@
 <div class="show-more-btn">
   <button>Show More</button>
 </div>
+<!-- socials icons -->
+<div class="social">
+  <a href="#">
+    <div class="social-btn color-telegram">
+      <div class="icons8-telegram-app"></div>
+      <p class="order-1 google-font margin-telgram"></p><i class="fa-brands fa-facebook-f" style="color: #eeeef2;"></i>
+    </div>
+  </a>
+  <a href="#">
+    <div class="social-btn color-instagram">
+      <div class="icons8-instagram"></div>
+      <p class="order-1 google-font margin-instagram"></p><i class="fa-brands fa-twitter" style="color: #e9ecf1;"></i>
+    </div>
+  </a>
+  <a href="#">
+    <div class="social-btn color-whatsapp">
+      <div class="icons8-whatsapp"></div>
+      <p class="order-1 google-font margin-instagram"></p><i class="fa-solid fa-plus" style="color: #f0f2f5;"></i>
+    </div>
+  </a>
+</div>
   <script src="https://code.jquery.com/jquery-3.6.0.js" 
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>

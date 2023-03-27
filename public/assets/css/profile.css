@@ -1,6 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Montez);
 
+:root {
+	--primary-color: #fff;
+	--secondary-color: #000;
+	
+}
+
+.dark-theme {
+	--primary-color: #000;
+	--secondary-color: #fff;
+}
+
 body{
   background: linear-gradient(to top, #f71543, #eb833e) fixed;
   font-family: Lato;
@@ -19,7 +30,7 @@ body{
   width: 75%;
   margin: 20px auto;
   margin-bottom: 100px;
-  background-color: #fff;
+  background-color: var(--primary-color);
   border-top: 5px solid #39cb58;
   border-radius: 0 0 5px 5px;
   box-shadow: 0 2.5px 5px #ccc;
@@ -184,7 +195,7 @@ span.name{
   font-size: 18px;
 }
 label{
-  color: #555;
+  color: var(--secondary-color);
   line-height: 2.1em;
   margin-left: 10px;
 }
@@ -416,7 +427,7 @@ fieldset textarea:focus,input:focus{
 ======================*/
 .content h1{
   text-align: center;
-  color: #555;
+  color: var(--secondary-color);
   font-family: Lato;
   font-size: 40px;
   font-weight: 200;

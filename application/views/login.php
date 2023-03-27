@@ -60,6 +60,15 @@
       </div>
     </div>
   </div>
+ <div class="cookie-container">
+	<p class="cookie-text">
+  This website may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the website work as you expect it to and give you a more personalized web experience. We respect your right to privacy, so you can choose not to allow some types of cookies. Click on the different category headings to find out more. You can accept or refuse our use of cookies, by moving the selector switch in each category to change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer you.
+	</p>
+	<div class="agree">
+	<button id="agree">Sounds good!</button>
+  <button id="disAgree">Bad idea!</button>
+	</div>
+</div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
 integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" 

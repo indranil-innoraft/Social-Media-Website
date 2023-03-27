@@ -60,6 +60,36 @@ $(document).ready(function(){
 
 }); 
 
+// const cookieContainer = document.querySelector(".cookie-container");
+// const agreeBtn = document.querySelector(".agree button");
+
+// setTimeout(() => {
+//   cookieContainer.classList.remove("hide");
+// }, 1000);
+
+// agreeBtn.addEventListener("click", () => {
+//   cookieContainer.classList.add("hide");
+// });
+
+$('#agree').click(function() {
+  sessionStorage.setItem("cookie", true);
+  $('.cookie-container').hide();
+});
+
+$('#disAgree').click(function() {
+  sessionStorage.setItem("cookie", false);
+  $('.cookie-container').show();
+});
+
+setTimeout(() => {
+  if (sessionStorage.getItem("cookie")) {
+    $('.cookie-container').hide();
+  }
+  else {
+    $('.cookie-container').show();
+  }
+}, 1);
+
 // $(".email-input").focusout(function () {
 //   $.ajax({
 //     url: "/register",
