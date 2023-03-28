@@ -1,7 +1,7 @@
 
 $(document).ready(function(){ 
 
-  $(".firstName>input").keyup(function(){ 
+  $(".firstName>input").on("blur", function checkFirstName() { 
     var letters = /^[A-Za-z]+$/;
     if(letters.test($(this).val())){ 
       $(this).css("border","green 2px solid"); 
@@ -11,7 +11,7 @@ $(document).ready(function(){
     }
   }); 
 
-  $(".lastName>input").keyup(function(){ 
+  $(".lastName>input").on("blur",  function checkLastName() { 
     var letters = /^[A-Za-z]+$/;
     if(letters.test($(this).val())){ 
       $(this).css("border","green 2px solid"); 
@@ -21,7 +21,7 @@ $(document).ready(function(){
     }
   });
 
-  $(".emailClass>input").keyup(function(){ 
+  $(".emailClass>input").on("blur", function isValidEmail() { 
     var emailReg = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(emailReg.test($(this).val())){ 
       $(this).css("border","green 2px solid"); 
@@ -38,7 +38,7 @@ $(document).ready(function(){
     }
 });
 
-  $(".passwordClass>input").keyup(function(){ 
+  $(".passwordClass>input").on("blur", function isValidPassword(){ 
     var passRegx =  /(?=.*[!#$%&?^*@~() "])(?=.{6,})/;
     // if ($(this).val().length < 2 ) {
     //   $(".passwordClass>.helpPassword").text("Password is too short.").css("color","red");
@@ -71,24 +71,21 @@ $(document).ready(function(){
 //   cookieContainer.classList.add("hide");
 // });
 
-$('#agree').click(function() {
-  sessionStorage.setItem("cookie", true);
-  $('.cookie-container').hide();
+$('#agree').on("click", function setCookie() {
+  var option = true;
+  localStorage.setItem("cookiePolicy", JSON.stringify(option));
+  $('.cookie-container').fadeOut();
 });
 
-$('#disAgree').click(function() {
-  sessionStorage.setItem("cookie", false);
-  $('.cookie-container').show();
+$('#disAgree').on("click", function removeCookie() {
+  var option = false;
+  localStorage.setItem("cookiePolicy", JSON.stringify(option));
+  $('.cookie-container').fadeOut();
 });
 
 setTimeout(() => {
-  if (sessionStorage.getItem("cookie")) {
-    $('.cookie-container').hide();
-  }
-  else {
-    $('.cookie-container').show();
-  }
-}, 1);
+  $('.cookie-container').fadeOut();
+}, 0.1);
 
 // $(".email-input").focusout(function () {
 //   $.ajax({

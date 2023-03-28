@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
 <div id="loading">
   <img id="loading-image" src = "/public/assets/image/1475.gif" alt="Loading..." />
 </div>
@@ -127,6 +128,7 @@
         </div>
         <div class="reaction">
         <i class="fa-regular fa-heart"></i>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fsocial.com%2Fhome&layout&size&width=91&height=20&appId" width="91" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
       </div>
     </article>
@@ -137,7 +139,7 @@
   <button>Show More</button>
 </div>
 <!-- socials icons -->
-<div class="social">
+<!-- <div class="social">
   <a href="#">
     <div class="social-btn color-telegram">
       <div class="icons8-telegram-app"></div>
@@ -156,7 +158,10 @@
       <p class="order-1 google-font margin-instagram"></p><i class="fa-solid fa-plus" style="color: #f0f2f5;"></i>
     </div>
   </a>
-</div>
+</div> -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6422baf859f5c322"></script>
+
   <script src="https://code.jquery.com/jquery-3.6.0.js" 
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
