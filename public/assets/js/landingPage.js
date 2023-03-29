@@ -55,7 +55,6 @@ $(document).ready(function(){
     else{ 
       $(this).css("border","red 2px solid"); 
     }
-
   });
 
 }); 

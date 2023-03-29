@@ -27,8 +27,8 @@ class Database extends mysqli {
      * @return object
      * 
      */
-    public function registerUser(string $firstName, string $lastName, $gender, $email, $profilePhoto, $bio, $password) {
-        $sql = "INSERT INTO user_information (first_name, last_name, gender, email, profile_photo, bio, password) VALUES ('$firstName', '$lastName', '$gender', '$email', '$profilePhoto', '$bio', '$password')";
+    public function registerUser(string $firstName, string $lastName, $gender, $email, $profilePhoto, $bio, $password, $cookiePolicy) {
+        $sql = "INSERT INTO user_information (first_name, last_name, gender, email, profile_photo, bio, password, cookie_policy) VALUES ('$firstName', '$lastName', '$gender', '$email', '$profilePhoto', '$bio', '$password', '$cookiePolicy')";
         $this->connection->query($sql);
         return $this->connection;
     }

@@ -28,7 +28,7 @@ if (isset($_POST['register'])) {
   else {
     $GLOBALS['profilePhotoErrorMessage'] = $validate->uploadedFileError;
   }
-  
+
   if (!$validate->isValidPassword($_POST['password'])) {
     $GLOBALS["passwordErrorMessage"] = $validate->passwordError;
   }
@@ -36,7 +36,13 @@ if (isset($_POST['register'])) {
     $GLOBALS["emailIdErrorMessage"] = "Account already exits.You can login.";
   }
   else {
-    $database->registerUser($_POST['firstName'], $_POST['lastName'], $_POST['radio'], $_POST['email'], $pathOfProfilePhoto, $_POST['bio'], md5($_POST['password']));
+    $cookiePolicy = 0;
+    if ($_POST['cookiePolicy'] == "accept") {
+      global $cookiePolicy;
+      $cookiePolicy = 1;
+    }
+    $database->registerUser($_POST['firstName'], $_POST['lastName'], $_POST['radio'], 
+    $_POST['email'], $pathOfProfilePhoto, $_POST['bio'], md5($_POST['password']), $cookiePolicy);
     require "./application/models/sendMailOnRegistration.php";
     $GLOBALS['successMessage'] = "Account created successfully.";
   }

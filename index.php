@@ -41,6 +41,9 @@ switch ($resquestedUrl) {
   case "/chatroom":
     require "./application/controllers/chat.php";
     break;
+  case "/cookiepolicy":
+    require "./application/views/cookiePolicy.html";
+    break;
   default:
     require "./application/controllers/errorPage.php";
 }

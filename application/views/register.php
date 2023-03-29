@@ -89,7 +89,7 @@
               <textarea id="txtid" name="bio" rows="2" cols="33" maxlength="200"></textarea>
               </span>
               <span class="passwordClass">
-              <label for="password">Password</label>
+              <label for="password">Password *</label>
               <input type="password" id="password" placeholder="Password" name = "password"  
               title="Must be at least 6 characters" />
               <span class="helpPassword"></span>
@@ -111,6 +111,11 @@
               }
               ?>
               </span>
+              <div class="checkBoxInput">
+              <input name="cookiePolicy" name="cookiePolicy" value="accept" type="checkbox"/>
+              <span class="helpPassword">By Clicking this accept the <a href="/cookiepolicy">cookie policy</a>
+              </span>
+              </div>
               <button class="btn" name="register" type="submit">Register</button>
             </div>
           </form>
