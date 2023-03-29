@@ -2,6 +2,8 @@
 
 require "./vendor/autoload.php";
 
+require "./application/controllers/googleConfig.php";
+
 $database = new Database();
 
 if (isset($_POST['login'])) {

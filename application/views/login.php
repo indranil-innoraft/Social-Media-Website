@@ -53,6 +53,7 @@
                   }
                 ?>
               </div>
+              <button id="loginGoogleBtn" class="btn" name="login" type="button">Login with google</button>
               <button class="btn" name="login" type="submit">Login</button>
             </div>
           </form>
@@ -62,7 +63,13 @@
   </div>
  <div class="cookie-container">
 	<p class="cookie-text">
-  This website may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the website work as you expect it to and give you a more personalized web experience. We respect your right to privacy, so you can choose not to allow some types of cookies. Click on the different category headings to find out more. You can accept or refuse our use of cookies, by moving the selector switch in each category to change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer you.
+  This website may store or retrieve information on your browser, mostly in the form of cookies. 
+  This information might be about you, your preferences or your device and is mostly used to make the website 
+  work as you expect it to and give you a more personalized web experience. We respect your right to privacy, 
+  so you can choose not to allow some types of cookies. Click on the different category headings to find out 
+  more. You can accept or refuse our use of cookies, by moving the selector switch in each category to change 
+  our default settings. However, blocking some types of cookies may impact your experience of the site and the
+   services we are able to offer you.
 	</p>
 	<div class="agree">
 	<button id="agree">Sounds good!</button>

@@ -59,6 +59,9 @@ $(document).ready(function(){
 
 }); 
 
+$("#loginGoogleBtn").on("click", function redirectUer() {
+  $(window.location)[0].replace("https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&access_type=online&client_id=1064476256339-58t8onva2r4dfphmj8mcmm7fuidv9era.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fsocial.com%2F&state&scope=email%20profile&approval_prompt=auto&service=lso&o2v=2&flowName=GeneralOAuthFlow");
+});
 // const cookieContainer = document.querySelector(".cookie-container");
 // const agreeBtn = document.querySelector(".agree button");
 
