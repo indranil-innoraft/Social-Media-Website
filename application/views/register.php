@@ -60,7 +60,7 @@
               </div>
               <span class="emailClass">
               <label for="email">Email address *</label>
-              <input name="email" class="email-input" id="email" 
+              <input name="email" type="email" class="email-input" id="email" 
               placeholder="name@example.com"  title="Enter a valid email address" required/>
               </span>
               <div class="error">
@@ -91,7 +91,7 @@
               <span class="passwordClass">
               <label for="password">Password *</label>
               <input type="password" id="password" placeholder="Password" name = "password"  
-              title="Must be at least 6 characters" />
+              title="Must be at least 6 characters" required/>
               <span class="helpPassword"></span>
               </span>
               <small class="messageHelp">Must be at least 6 characters</small>

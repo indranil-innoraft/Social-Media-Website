@@ -1,6 +1,6 @@
 
 $(document).ready(function(){ 
-
+  //Check User entered a correct first name or not.
   $(".firstName>input").on("blur", function checkFirstName() { 
     var letters = /^[A-Za-z]+$/;
     if(letters.test($(this).val())){ 
@@ -60,7 +60,7 @@ $(document).ready(function(){
 }); 
 
 $("#loginGoogleBtn").on("click", function redirectUer() {
-  $(window.location)[0].replace("https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&access_type=online&client_id=1064476256339-58t8onva2r4dfphmj8mcmm7fuidv9era.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fsocial.com%2F&state&scope=email%20profile&approval_prompt=auto&service=lso&o2v=2&flowName=GeneralOAuthFlow");
+  $(window.location)[0].replace("https://accounts.google.com/o/oauth2/v2/auth?response_type=code&access_type=online&client_id=1064476256339-58t8onva2r4dfphmj8mcmm7fuidv9era.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fsocial.com%2Fgooglevalidation&state&scope=email%20profile&approval_prompt=auto");
 });
 // const cookieContainer = document.querySelector(".cookie-container");
 // const agreeBtn = document.querySelector(".agree button");

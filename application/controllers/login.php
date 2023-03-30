@@ -2,7 +2,8 @@
 
 require "./vendor/autoload.php";
 
-require "./application/controllers/googleConfig.php";
+require "./application/controllers/authenticateByGoogle.php";
+
 
 $database = new Database();
 

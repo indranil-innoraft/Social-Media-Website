@@ -2,50 +2,54 @@
 
 $resquestedUrl = $_SERVER['REQUEST_URI'];
 $resquestedUrl = rtrim($resquestedUrl);
+$resquestedUrlArray = explode("/", $resquestedUrl);
+$queryPage = explode("?", $resquestedUrlArray[1]);
 
-//Based on the user requested url it will redirect the page.
-switch ($resquestedUrl) {
-  case "/":
+switch ($queryPage[0]) {
+  case "":
     require "./application/controllers/login.php";
     break;
-  case "/login":
+  case "login":
     require "./application/controllers/login.php";
     break;
-  case "/signin":
+  case "signin":
     require "./application/controllers/login.php";
     break;
-  case "/signup":
+  case "signup":
     require "./application/controllers/register.php";
     break;
-  case "/register":
+  case "register":
     require "./application/controllers/register.php";
     break;
-  case "/home":
+  case "home":
     require "./application/controllers/home.php";
     break;
-  case "/profile":
+  case "profile":
     require "./application/controllers/profile.php";
     break;
-  case "/logout":
+  case "logout":
     require "./application/controllers/logout.php";
     break;
-  case "/forgetpassword":
+  case "forgetpassword":
     require "./application/controllers/forgetPassword.php";
     break;
-  case "/validateotp":
+  case "validateotp":
     require "./application/controllers/validateOtp.php";
     break;
-  case "/changepassword":
+  case "changepassword":
     require "./application/controllers/changePassword.php";
     break;
-  case "/chatroom":
+  case "chatroom":
     require "./application/controllers/chat.php";
     break;
-  case "/cookiepolicy":
+  case "cookiepolicy":
     require "./application/views/cookiePolicy.html";
+    break;
+  case "googlevalidation":
+    require "./application/controllers/authenticateByGoogle.php";
     break;
   default:
     require "./application/controllers/errorPage.php";
 }
 
-?> 
+?>

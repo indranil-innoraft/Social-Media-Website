@@ -615,3 +615,6 @@ textarea:focus {
 	color: var(--white-text);
 }
 
+#loginGoogleBtn {
+  background: rgb(27, 27, 233);
+}

@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#9F2B00">
   <link rel="stylesheet" href="../../public/assets/css/landingPage.css">
   <link rel="icon" href="/public/assets/image/titleIcon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"/>
 </head>
 
 <body>
@@ -53,7 +54,7 @@
                   }
                 ?>
               </div>
-              <button id="loginGoogleBtn" class="btn" name="login" type="button">Login with google</button>
+              <button id="loginGoogleBtn" class="btn" name="login" type="button"><i class="fa-brands fa-google fa-beat-fade" style="color: #f5f7f9;"></i>Login with google</button>
               <button class="btn" name="login" type="submit">Login</button>
             </div>
           </form>
@@ -63,11 +64,11 @@
   </div>
  <div class="cookie-container">
 	<p class="cookie-text">
-  This website may store or retrieve information on your browser, mostly in the form of cookies. 
-  This information might be about you, your preferences or your device and is mostly used to make the website 
-  work as you expect it to and give you a more personalized web experience. We respect your right to privacy, 
-  so you can choose not to allow some types of cookies. Click on the different category headings to find out 
-  more. You can accept or refuse our use of cookies, by moving the selector switch in each category to change 
+  This website may store or retrieve information on your browser, mostly in the form of cookies.
+  This information might be about you, your preferences or your device and is mostly used to make the website
+  work as you expect it to and give you a more personalized web experience. We respect your right to privacy,
+  so you can choose not to allow some types of cookies. Click on the different category headings to find out
+  more. You can accept or refuse our use of cookies, by moving the selector switch in each category to change
   our default settings. However, blocking some types of cookies may impact your experience of the site and the
    services we are able to offer you.
 	</p>
@@ -77,8 +78,8 @@
 	</div>
 </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
-integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../../public/assets/js/landingPage.js"></script>
 </html>
