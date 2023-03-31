@@ -30,14 +30,14 @@
           </div>
         </fieldset>
         <fieldset>
-          <div class="grid-35"> 
+          <div class="grid-35">
             <label for="fname">First Name</label>
           </div>
           <div class="grid-65">
             <input type="text" id="fname" name = "firstName" value="<?php
             if (isset($_SESSION['user']['firstName'])) {
                 echo $_SESSION['user']['firstName'];
-            } 
+            }
             ?>"tabindex="1" />
           </div>
         </fieldset>
@@ -49,7 +49,7 @@
             <input type="text" id="lname" name = "lastName" value="<?php
             if (isset($_SESSION['user']['lastName'])) {
                 echo $_SESSION['user']['lastName'];
-            } 
+            }
             ?>" tabindex="2" />
           </div>
           <div class="error">
@@ -67,7 +67,7 @@
           </div>
           <div class="grid-65">
           <textarea id="" name = "bio" cols="30" rows="auto" tabindex="3" ><?php
-        
+
         if (isset($_SESSION['user']['bio'])) {
             echo($_SESSION['user']['bio']);
         }
@@ -119,18 +119,17 @@
           <!-- <input type="button" class="Btn cancel" name="goBack" value="Go back" /> -->
           <input type="submit" class="Btn" name="updateUserProfile" value="Save Changes" />
         </fieldset>
-
       </form>
     </div>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.js" 
+<script src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="./public/assets/js/profile.js"></script>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
-  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 </html>

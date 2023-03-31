@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require "./vendor/autoload.php";
 
@@ -6,7 +6,6 @@ require "./application/controllers/authenticateByGoogle.php";
 
 
 $database = new Database();
-
 if (isset($_POST['login'])) {
   if ( $database->isExists($_POST['email'], md5($_POST['password'])) ) {
     $data = $database->retriveUserInformation($_POST['email']);
@@ -25,5 +24,5 @@ if (isset($_POST['login'])) {
 }
 
 require "./application/views/login.php";
- 
+
 ?>

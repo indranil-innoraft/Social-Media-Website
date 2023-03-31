@@ -1,8 +1,12 @@
-<?php 
-require "./vendor/autoload.php";
+<?php
 
+require "./vendor/autoload.php";
+session_start();
+if ($_SESSION['userEmail'] == NULL) {
+  session_destroy();
+  header('Location: /forgetpassword');
+}
 if (isset($_POST['validateOtp'])) {
-  session_start();
   $otp = $_POST['first'] . $_POST['second'] . $_POST['third'] .$_POST['fourth'];
   if($_SESSION['otp'] == $otp) {
     header ("Location: /changepassword");
@@ -11,7 +15,6 @@ if (isset($_POST['validateOtp'])) {
     $GLOBALS['error'] = "Otp is not valid.";
   }
 }
-
 if (isset($_POST['goBack'])) {
   session_start();
   session_destroy();
@@ -19,3 +22,5 @@ if (isset($_POST['goBack'])) {
 }
 
 require "./application/views/validateOtp.php";
+
+?>

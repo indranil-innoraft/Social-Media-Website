@@ -20,7 +20,7 @@ if (isset($_POST['updateUserProfile'])) {
     //If uploaded image is valid then send the image upload_image folder.
     move_uploaded_file($_FILES['profileImage']['tmp_name'], $pathOfProfilePhoto);
 
-    $database->updateUserInformation($_POST['firstName'], $_POST['lastName'], 
+    $database->updateUserInformation($_POST['firstName'], $_POST['lastName'],
     $_POST['gender'], $_SESSION['user']['email'], $pathOfProfilePhoto, $_POST['bio']);
 
     $data = $database->retriveUserInformation($_SESSION['user']['email']);
@@ -32,7 +32,7 @@ if (isset($_POST['updateUserProfile'])) {
   }
   else {
     if ( $validate->isValidName($_POST['firstName'], $_POST['lastName']) && $validate->isValidGender($_POST['gender'])) {
-    $database->updateUserInformation($_POST['firstName'], $_POST['lastName'], 
+    $database->updateUserInformation($_POST['firstName'], $_POST['lastName'],
     $_POST['gender'], $_SESSION['user']['email'], $_SESSION['user']['profilePhoto'], htmlspecialchars($_POST['bio'], ENT_QUOTES));
 
     $data = $database->retriveUserInformation($_SESSION['user']['email']);
@@ -43,7 +43,7 @@ if (isset($_POST['updateUserProfile'])) {
     $_SESSION['user']['bio'] = $data['bio'];
     $GLOBALS['successMessage'] = "Profile updated successfully.";
    }
-  } 
+  }
 }
 }
 require "./application/views/profile.php";

@@ -26,8 +26,9 @@
         <label for="email"><br>Email</label>
         <span>enter your email</span>
       </formgroup>
+      <div id="invalidEmail">Please inputs a propper email eg. name@google.com</div>
       <div class="error">
-        <?php 
+        <?php
           if (isset($GLOBALS['error'])) {
             echo $GLOBALS['error'];
           }

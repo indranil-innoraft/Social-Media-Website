@@ -12,6 +12,18 @@
 </head>
 
 <body>
+  <div id="pop-window">
+    <div id="cookie-policy">
+      <h2>Cookie Policy</h2>
+      <p>This website may store or retrieve information on your browser, mostly in the form of cookies. This information
+      might be about you, your preferences or your device and is mostly used to make the website work as you expect it
+      to and give you a more personalized web experience. We respect your right to privacy, so you can choose not to
+      allow some types of cookies. Click on the different category headings to find out more. You can accept or refuse
+      our use of cookies, by moving the selector switch in each category to change our default settings. However,
+      blocking some types of cookies may impact your experience of the site and the services we are able to offer you.</p>
+      <span id="cross-btn">close</span>
+    </div>
+  </div>
 <div class="menu-wrap">
     <input type="checkbox" class="toggler">
     <div class="hamburger"><div></div></div>
@@ -60,11 +72,11 @@
               </div>
               <span class="emailClass">
               <label for="email">Email address *</label>
-              <input name="email" type="email" class="email-input" id="email" 
+              <input name="email" type="email" class="email-input" id="email"
               placeholder="name@example.com"  title="Enter a valid email address" required/>
               </span>
               <div class="error">
-                <?php 
+                <?php
                 if (isset($GLOBALS["emailIdErrorMessage"])) {
                   echo $GLOBALS["emailIdErrorMessage"];
                 }
@@ -74,11 +86,11 @@
                 ?>
               </div>
               <label for="profileImage">Profile Image</label>
-              <input name="profileImage" id="file" type="file" accept="image/*" 
+              <input name="profileImage" id="file" type="file" accept="image/*"
               placeholder="Profile Image"  title="Upload your profile image." />
               <span class="fileInfo"></span>
               <div class="error">
-                <?php 
+                <?php
                 if (isset($GLOBALS["profilePhotoErrorMessage"])) {
                   echo $GLOBALS["profilePhotoErrorMessage"];
                 }
@@ -90,19 +102,19 @@
               </span>
               <span class="passwordClass">
               <label for="password">Password *</label>
-              <input type="password" id="password" placeholder="Password" name = "password"  
+              <input type="password" id="password" placeholder="Password" name = "password"
               title="Must be at least 6 characters" required/>
               <span class="helpPassword"></span>
               </span>
               <small class="messageHelp">Must be at least 6 characters</small>
               <div class="error">
-                <?php 
+                <?php
                 if (isset($GLOBALS["passwordErrorMessage"])) {
                   echo $GLOBALS["passwordErrorMessage"];
                 }
                 ?>
               </div>
-              <span class="backToLogin">If you have an Account please 
+              <span class="backToLogin">If you have an Account please
                 <a href="/login">Login</a><br></span>
               <span class="success">
               <?php
@@ -113,7 +125,7 @@
               </span>
               <div class="checkBoxInput">
               <input name="cookiePolicy" name="cookiePolicy" value="accept" type="checkbox"/>
-              <span class="helpPassword">By Clicking this accept the <a href="/cookiepolicy">cookie policy</a>
+              <span class="helpPassword">By Clicking this accept the <a id="cp">cookie policy</a>
               </span>
               </div>
               <button class="btn" name="register" type="submit">Register</button>
@@ -124,7 +136,8 @@
     </div>
   </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
 integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous"
  referrerpolicy="no-referrer"></script>
 <script src="/public/assets/js/landingPage.js"></script>

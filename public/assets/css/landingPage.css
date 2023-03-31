@@ -11,7 +11,7 @@
     box-sizing: border-box;
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
   }
-  
+
   html {
     font-size: 10px;
   }
@@ -29,15 +29,15 @@
     background: linear-gradient(to top, #f71543, #eb833e) fixed;
     line-height: 1.4;
     font-family: 'Work Sans', sans-serif;
-  } 
-  
+  }
+
   input,
   label,
   small,
   button {
     display: block;
   }
-  
+
   .wrapper {
     width: 350px;
     height: auto;
@@ -72,12 +72,12 @@
     border-radius: 30px 30px 0 0;
     cursor: pointer;
   }
-  
+
   .navTab.active {
     background: #ffffff;
     color: hsl(0, 0%, 10%);
   }
-  
+
   .contentWrapper {
     width: 100%;
     position: relative;
@@ -111,7 +111,7 @@
     font-weight: 400;
     color: #1f1414;
   }
-  
+
   .formGroup input:not(input[type='checkbox']) {
     width: 100%;
     height: 40px;
@@ -133,11 +133,11 @@
   .validOtp {
     border: 2px solid green;
   }
-  
+
   .formGroup input::placeholder {
     color: #b3b3b3;
   }
-  
+
   .formGroup div {
     display: flex;
     align-items: center;
@@ -151,7 +151,7 @@
     font-size: 1.5rem;
     user-select: none;
   }
-  
+
   .backToLogin {
     margin: 5px 0px;
     font-size: 1.7em;
@@ -196,14 +196,14 @@
     cursor: pointer;
     transition: all 250ms ease-in-out;
   }
-  
+
   .btn:hover {
     background: linear-gradient(to top, #da2c4e, #c26e36) fixed;
   }
   .content.active {
     display: block;
   }
-  
+
   .flex-row {
     width: 100%;
     height: 20px;
@@ -309,17 +309,17 @@ input[type=file]::file-selector-button:hover {
   font-size: 15px;
 }
 
-textarea:focus { 
+textarea:focus {
   outline: none !important;
   /* border-color: #719ECE;
   box-shadow: 0 0 10px #719ECE; */
 }
 
 .success {
-  
+
   font-size: 2rem;
   color: green;
-  font-weight: 500; 
+  font-weight: 500;
 }
 
 .rightInput {
@@ -547,7 +547,7 @@ textarea:focus {
 	--button-background: #fff;
 	--button-background-hover: #000;
 	--button-text: #007af7;
-	
+
 }
 
 .cookie-container {
@@ -617,4 +617,51 @@ textarea:focus {
 
 #loginGoogleBtn {
   background: rgb(27, 27, 233);
+}
+
+#pop-window {
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+#cookie-policy {
+  width: 100%;
+  color: black;
+  padding: 30px;
+  background-color: #fff3f3;
+}
+
+#cookie-policy h2 {
+  padding: 10px;
+  color: #222;
+  padding-left: 0px;
+  font-size: 1.9rem;
+}
+
+#cookie-policy p {
+  font-size: 1.5rem;
+  margin-bottom: 9px;
+}
+#cross-btn {
+  background-color: black;
+  padding: 3px;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+#cp {
+  color: blue;
+}
+
+.wrong-input {
+  border: 1px solid red;
 }

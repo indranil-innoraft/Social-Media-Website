@@ -12,13 +12,11 @@
 <div class="mainDiv">
   <div class="cardStyle">
     <form action="" method="post" name="signupForm" id="signupForm">
-      
       <img src="" id="signupLogo"/>
-      
       <h2 class="formTitle">
         Rest your password
       </h2>
-      
+
     <div class="inputDiv">
       <label class="inputLabel" for="password">New Password</label>
       <input type="password" id="password" name="newPassword">
@@ -38,14 +36,17 @@
     ?>
     </span>
     <div class="buttonWrapper">
-      <button type="submit" name = "continue" id="submitButton" 
+      <button type="submit" name = "continue" id="submitButton"
       class="submitButton pure-button pure-button-primary">
         <span>Continue</span>
       </button>
     </div>
-      
+
   </form>
   </div>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="public/assets/js/changePassword.js"></script>
 </html>

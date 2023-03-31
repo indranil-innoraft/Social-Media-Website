@@ -42,9 +42,6 @@ switch ($queryPage[0]) {
   case "chatroom":
     require "./application/controllers/chat.php";
     break;
-  case "cookiepolicy":
-    require "./application/views/cookiePolicy.html";
-    break;
   case "googlevalidation":
     require "./application/controllers/authenticateByGoogle.php";
     break;

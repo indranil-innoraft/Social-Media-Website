@@ -3,7 +3,6 @@
 require "./vendor/autoload.php";
 
 $database = new Database();
-
 if (isset($_POST['email'])) {
   if ($database->isUserEmailIdExits($_POST['email'])) {
     session_start();
@@ -17,3 +16,5 @@ if (isset($_POST['email'])) {
   }
 }
 require "./application/views/forgetPassword.php";
+
+?>
