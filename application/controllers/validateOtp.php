@@ -2,10 +2,11 @@
 
 require "./vendor/autoload.php";
 session_start();
-if ($_SESSION['userEmail'] == NULL) {
+if (empty($_SESSION['userEmail'])) {
   session_destroy();
   header('Location: /forgetpassword');
 }
+
 if (isset($_POST['validateOtp'])) {
   $otp = $_POST['first'] . $_POST['second'] . $_POST['third'] .$_POST['fourth'];
   if($_SESSION['otp'] == $otp) {

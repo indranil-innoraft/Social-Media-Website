@@ -1,5 +1,4 @@
 <?php
-
 $resquestedUrl = $_SERVER['REQUEST_URI'];
 $resquestedUrl = rtrim($resquestedUrl);
 $resquestedUrlArray = explode("/", $resquestedUrl);

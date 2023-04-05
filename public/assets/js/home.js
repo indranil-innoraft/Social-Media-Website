@@ -89,7 +89,7 @@ themeBtn.onclick = function () {
 
 setInterval(() => {
   let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
-  if(getTheme === "dark"){
+  if (getTheme === "dark") {
     document.body.classList.remove("dark-theme");
     themeText.innerHTML = "Dark theme";
   }else{
@@ -98,8 +98,6 @@ setInterval(() => {
   }
 }, 1);
 
-var loveIcons =document.getElementsByClassName("loveIcon");
-
-$('.fa-regular').click(function() {
+$('.fa-regular').on("click", function() {
   $(this).toggleClass("fa-solid").css("color","red");
 });

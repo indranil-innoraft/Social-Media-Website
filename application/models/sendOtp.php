@@ -1,16 +1,15 @@
 <?php
 
+require "./vendor/autoload.php";
+require "./config/googleSecrect.php";
+
 //Provieds the email creation and transfer class.
 use PHPMailer\PHPMailer\PHPMailer;
-
-$userName = "magnuscarlesn097@gmail.com";
-$password = "iyxbajujsnmapgaj";
 
 try {
   $mail = new PHPMailer(true);
 
   //Server settings
-
   //Send using SMTP
   $mail->isSMTP();
 
@@ -31,15 +30,13 @@ try {
 
   //Recipients.
   $mail->setFrom($userName);
-  $mail->addAddress($userData['email']);
+  $mail->addAddress($_POST['email']);
 
   //Set email format to HTML.
   $mail->isHTML(true);
-  $mail->addEmbeddedImage('public/assets/image/welcome.png', 'welcome');
-  $mail->Subject = 'Account Opening Mail.';
-  $text = '<h1>Thanks ' . $userData['given_name'] . ' for registering.<br>
-  <br> <img src="cid:welcome">';
-  $mail->Body = $text;
+  $mail->Subject = 'Reset Your Password.';
+  $text = "One time password(OTP) is : ";
+  $mail->Body = $text . $_SESSION['otp'];
 
   //Send email.
   $mail->send();

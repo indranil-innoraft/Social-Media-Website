@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if ($_SESSION['user']['email'] == NULL) {
+if (empty($_SESSION['user']['email'] == NULL)) {
   session_destroy();
   header('Location: /login');
 }

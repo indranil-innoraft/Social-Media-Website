@@ -2,7 +2,7 @@
 
 require "./vendor/autoload.php";
 session_start();
-if ($_SESSION['userEmail'] == NULL) {
+if (empty($_SESSION['userEmail'])) {
   session_destroy();
   header('Location: /forgetpassword');
 }

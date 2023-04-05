@@ -4,7 +4,7 @@ require "./vendor/autoload.php";
 
 $validate = new Validation();
 $database = new Database();
-$pathOfProfilePhoto = "";
+$path_of_profile_photo = "";
 
 if (isset($_POST['register'])) {
   if (!$validate->isValidName($_POST['firstName'], $_POST['lastName'])) {
@@ -18,9 +18,9 @@ if (isset($_POST['register'])) {
   //   $GLOBALS["emailExitsErrorMessage"] = $validate->emailExitsError;
   // }
   if ($validate->isValidProfilePhoto($_FILES['profileImage']['name'], $_FILES['profileImage']['type'], $_FILES['profileImage']['size'])) {
-    $pathOfProfilePhoto = "public/assets/image/profilePhoto/" . $_FILES['profileImage']['name'];
+    $path_of_profile_photo = "public/assets/image/profilePhoto/" . $_FILES['profileImage']['name'];
     //If uploaded image is valid then send the image upload_image folder.
-    move_uploaded_file($_FILES['profileImage']['tmp_name'], $pathOfProfilePhoto);
+    move_uploaded_file($_FILES['profileImage']['tmp_name'], $path_of_profile_photo);
   }
   else {
     $GLOBALS['profilePhotoErrorMessage'] = $validate->uploadedFileError;
@@ -38,7 +38,7 @@ if (isset($_POST['register'])) {
       $cookiePolicy = 1;
     }
     $database->registerUser($_POST['firstName'], $_POST['lastName'], $_POST['radio'],
-    $_POST['email'], $pathOfProfilePhoto, $_POST['bio'], md5($_POST['password']), $cookiePolicy);
+    $_POST['email'], $path_of_profile_photo, $_POST['bio'], md5($_POST['password']), $cookiePolicy);
     require "./application/models/sendMailOnRegistration.php";
     $GLOBALS['successMessage'] = "Account created successfully.";
   }
