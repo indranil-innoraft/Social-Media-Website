@@ -1,0 +1,26 @@
+{
+  "name": "indranil/social.com",
+  "autoload": {
+    "classmap": [
+      "./application/models/database/config.php",
+      "./application/models/database/Database.php",
+      "./application/models/User.php",
+      "./application/models/Validation.php"
+    ],
+    "psr-4": {
+      "MyApp\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "indranil-innoraft",
+      "email": "indranil.roy@innoraft.com"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "^6.8",
+    "guzzlehttp/guzzle": "^7.5",
+    "cboden/ratchet": "^0.4.4",
+    "google/apiclient": "^2.0"
+  }
+}

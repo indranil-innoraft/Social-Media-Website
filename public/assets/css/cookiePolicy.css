@@ -1,0 +1,19 @@
+.button-go-back a {
+  color: white;
+  padding: 10px 20px;
+  background: rgb(51, 51, 247);
+  border: none;
+  text-decoration: none;
+}
+
+.button-go-back {
+  padding: 20px 0px;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.cookie-txt {
+  text-align: justify;
+}
